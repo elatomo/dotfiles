@@ -53,10 +53,10 @@ let g:mapleader = ","
 :map <leader>< <c-w>=
 " Toggle nerdtree
 :map <leader>f :NERDTreeToggle<cr>
-" Toggle tlist
-:map <leader>g :TlistToggle<cr>
+" Toggle tlist @TODO not yet intalled
+":map <leader>g :TlistToggle<cr>
 " Update tlist
-:map <leader>u :TlistUpdate<cr>
+":map <leader>u :TlistUpdate<cr>
 " New tab
 :map <leader>t :tabnew<cr>
 " Go to tabs
@@ -64,6 +64,9 @@ let g:mapleader = ","
 :map <leader>2 :tabn 2<cr>
 :map <leader>3 :tabn 3<cr>
 :map <leader>4 :tabn 4<cr>
+" Fold and unfold
+nnoremap <space> za
+"vnoremap <space> zf
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text, tab and indent related
@@ -78,15 +81,22 @@ set tw=500
 
 set ai "Auto indent
 set si "Smart indent
-"set wrap "Wrap lines
 
 " Always show the statusline
 set laststatus=2
 
+" Code Folding, everything folded by default
+set foldmethod=indent
+set foldlevel=1 "Fold up first indent level
+set foldnestmax=2
+"set foldenable
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Show only one file in tlist
-let Tlist_Show_One_File=1
-let Tlist_Display_Prototype=1
+"let Tlist_Show_One_File=1
+"let Tlist_Display_Prototype=1
+
+" Set xoria256
+colorscheme xoria256
