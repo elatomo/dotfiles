@@ -3,6 +3,10 @@
 " See http://amix.dk/vim/vimrc.html
 " Reload vimrc :source .vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Load pathogen plugin
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 " How many lines of history VIM has to remember
 set history=700
 
