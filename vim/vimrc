@@ -53,7 +53,7 @@ let g:mapleader = ","
 :map <leader>< <c-w>=
 " Toggle nerdtree
 :map <leader>f :NERDTreeToggle<cr>
-" Toggle tlist @TODO not yet intalled
+" Toggle tlist @TODO to be replaced by tagbar
 ":map <leader>g :TlistToggle<cr>
 " Update tlist
 ":map <leader>u :TlistUpdate<cr>
@@ -100,3 +100,14 @@ set foldnestmax=2
 
 " Set xoria256
 colorscheme xoria256
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vimwiki specific
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let wiki = {}
+let wiki.maxhi=1 "Highlight vimwiki broken links
+"Syntax highlight
+let wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
+let g:vimwiki_list = [wiki]
+"Folding
+let g:vimwiki_folding=1
