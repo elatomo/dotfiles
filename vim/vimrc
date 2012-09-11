@@ -53,8 +53,8 @@ let g:mapleader = ","
 :map <leader>< <c-w>=
 " Toggle nerdtree
 :map <leader>f :NERDTreeToggle<cr>
-" Toggle tlist @TODO to be replaced by tagbar
-":map <leader>g :TlistToggle<cr>
+" Toggle tagbar
+:map <leader>g :TagbarToggle<cr>
 " Update tlist
 ":map <leader>u :TlistUpdate<cr>
 " New tab
