@@ -94,11 +94,7 @@ set foldnestmax=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Show only one file in tlist
-"let Tlist_Show_One_File=1
-"let Tlist_Display_Prototype=1
-
-" Set xoria256
+" Set xoria256 colorscheme
 colorscheme xoria256
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -111,3 +107,11 @@ let wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
 let g:vimwiki_list = [wiki]
 "Folding
 let g:vimwiki_folding=1
+"Integrate vimwiki and tagbar
+let g:tagbar_type_vimwiki = {
+    \'ctagstype': 'vimwiki',
+    \'kinds': [
+        \'h:header',
+    \],
+    \'sort': 0
+\}
