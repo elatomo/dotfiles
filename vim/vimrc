@@ -98,6 +98,9 @@ set foldnestmax=2
 " Set xoria256 colorscheme
 colorscheme xoria256
 
+" Let syntastic use psr2 coding standard for phpcs
+let g:syntastic_phpcs_conf="--standard=PSR2"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vimwiki specific
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
