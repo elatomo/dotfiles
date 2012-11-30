@@ -55,8 +55,6 @@ let g:mapleader = ","
 :map <leader>f :NERDTreeToggle<cr>
 " Toggle tagbar
 :map <leader>g :TagbarToggle<cr>
-" Update tlist
-":map <leader>u :TlistUpdate<cr>
 " New tab
 :map <leader>t :tabnew<cr>
 " Go to tabs
@@ -119,3 +117,10 @@ let g:tagbar_type_vimwiki = {
     \],
     \'sort': 0
 \}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SCVim specific
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:sclangTerm = "gnome-terminal -t 'sclang' -x $SHELL -ic"
+let g:sclangPipeApp = "~/.vim/bundle/scvim/bin/start_pipe"
+let g:sclangDispatcher = "~/.vim/bundle/scvim/bin/sc_dispatcher"
