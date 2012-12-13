@@ -62,6 +62,8 @@ let g:mapleader = ","
 :map <leader>2 :tabn 2<cr>
 :map <leader>3 :tabn 3<cr>
 :map <leader>4 :tabn 4<cr>
+:map <leader>5 :tabn 5<cr>
+:map <leader>6 :tabn 6<cr>
 " Fold and unfold
 nnoremap <space> za
 " Syntax checking: syntastic toggle active mode
