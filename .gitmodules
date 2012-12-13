@@ -13,6 +13,9 @@
 [submodule "vim/bundle/vim-xdebug"]
 	path = vim/bundle/vim-xdebug
 	url = https://github.com/ludovicPelle/vim-xdebug.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = git://github.com/plasticboy/vim-markdown.git
 [submodule "vim/bundle/scvim"]
 	path = vim/bundle/scvim
-	url = git://github.com/elatomo/scvim.git
+	url = git@github.com:elatomo/scvim.git
