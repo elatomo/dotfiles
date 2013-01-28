@@ -16,9 +16,6 @@
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = git://github.com/plasticboy/vim-markdown.git
-[submodule "vim/bundle/scvim"]
-	path = vim/bundle/scvim
-	url = git@github.com:elatomo/scvim.git
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
 	url = git://github.com/klen/python-mode.git
