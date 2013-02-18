@@ -28,3 +28,15 @@
 [submodule "vim/bundle/scvim"]
 	path = vim/bundle/scvim
 	url = git://github.com/elatomo/scvim.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "xresources"]
+	path = xresources
+	url = git://github.com/solarized/xresources.git
+[submodule "bin/gnome-terminal-solarized"]
+	path = bin/gnome-terminal-solarized
+	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+[submodule "dircolors"]
+	path = dircolors
+	url = git://github.com/seebi/dircolors-solarized.git

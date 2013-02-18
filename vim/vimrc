@@ -91,15 +91,16 @@ set laststatus=2
 
 " Code Folding, everything folded by default
 set foldmethod=indent
-set foldlevel=1 "Fold up first indent level
+set foldlevel=99 " Nothing folded
 set foldnestmax=2
 "set foldenable
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set xoria256 colorscheme
-colorscheme xoria256
+" Solarized colorscheme
+set background=dark
+colorscheme solarized
 
 " Let syntastic use psr2 coding standard for phpcs
 let g:syntastic_phpcs_conf="--standard=PSR2"
