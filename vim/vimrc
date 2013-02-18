@@ -111,7 +111,7 @@ let g:syntastic_phpcs_conf="--standard=PSR2"
 let wiki = {}
 let wiki.maxhi=1 "Highlight vimwiki broken links
 "Syntax highlight
-let wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql'}
+let wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql', 'java': 'java'}
 let g:vimwiki_list = [wiki]
 "Folding
 let g:vimwiki_folding=1
