@@ -15,4 +15,4 @@ mvn eclipse:eclipse -DdownloadSources
 sed -rn '/sourcepath/{s/.*sourcepath="M2_REPO.([^"]*).*/\1/;p}' .classpath | \
     (cd $dir && xargs -i jar xf ~/.m2/repository/{})
 # generate tags
-ctags-exuberant -R --totals=yes --language-force=java --java-kinds=pcim $dir src/main
+ctags-exuberant -R --totals=yes --languages=java --java-kinds=cefgip src/main $dir
