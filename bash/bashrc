@@ -108,7 +108,7 @@ if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
 fi
 
 # add dotfiles/bin to PATH
-export PATH=$PATH:$HOME/dotfiles/bin
+export PATH=$HOME/dotfiles/bin:$PATH
 
 # python virtualenvwrapper
 if [ `id -u` != '0' ] && [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
