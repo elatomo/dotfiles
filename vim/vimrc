@@ -77,6 +77,10 @@ set shiftwidth=4
 set tabstop=4
 set smarttab
 
+autocmd FileType css,less,html setlocal shiftwidth=2 tabstop=2
+"autocmd FileType less setlocal shiftwidth=2 tabstop=2
+"autocmd FileType html setlocal shiftwidth=2 tabstop=2
+
 set lbr
 set tw=500
 
