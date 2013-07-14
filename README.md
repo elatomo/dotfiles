@@ -47,43 +47,43 @@ xrdb -merge ~/.Xresources
 
 ### Vim key mappings
 
-Uses *comma* (`,`) as *<leader>* key.
+Uses *comma* (`,`) as `<leader>` key.
 
 #### Windows
 
 Inspired by the [xmonad](http://xmonad.org/) window manager:
 
-| Shortcut   | Action                             |
-|------------|------------------------------------|
-| <leader> s | split window vertically            |
-| <leader> v | split window horizontally          |
-| <leader> n | new vertical split window          |
-| <leader> q | close window                       |
-| <leader> j | move to down window                |
-| <leader> k | move to upper window               |
-| <leader> l | move to right window               |
-| <leader> h | move to left window                |
-| <leader> r | rotate windows                     |
-| <leader> = | adjusts viewports to the same size |
+| Shortcut     | Action                             |
+|--------------|------------------------------------|
+| `<leader> s` | split window vertically            |
+| `<leader> v` | split window horizontally          |
+| `<leader> n` | new vertical split window          |
+| `<leader> q` | close window                       |
+| `<leader> j` | move to down window                |
+| `<leader> k` | move to upper window               |
+| `<leader> l` | move to right window               |
+| `<leader> h` | move to left window                |
+| `<leader> r` | rotate windows                     |
+| `<leader> =` | adjusts viewports to the same size |
 
 #### Tabs
 
-| Shortcut           | Action                    |
-|--------------------|---------------------------|
-| <leader> t         | open new tab              |
-| <leader> [1 .. 6]  | got to tab 1 .. 6         |
+| Shortcut            | Action            |
+|---------------------|-------------------|
+| `<leader> t`        | open new tab      |
+| `<leader> [1 .. 6]` | got to tab 1 .. 6 |
 
 #### Tools
 
-| Shortcut           | Action                               |
-|--------------------|--------------------------------------|
-| SPACE              | fold / unfold                        |
-| <leader> f         | toggle file browser (nerdtree)       |
-| <leader> g         | toggle source code browser (taglist) |
-| <leader> c         | toggle syntax checking (syntastic)   |
-| <leader>ww         | vimwiki                              |
-| <leader>w<leader>w | vimwiki diary                        |
-| CTROL+SPACE        | create / toggle todo item            |
+| Shortcut             | Action                               |
+|----------------------|--------------------------------------|
+| `SPACE`              | fold / unfold                        |
+| `<leader> f`         | toggle file browser (nerdtree)       |
+| `<leader> g`         | toggle source code browser (taglist) |
+| `<leader> c`         | toggle syntax checking (syntastic)   |
+| `<leader>ww`         | vimwiki                              |
+| `<leader>w<leader>w` | vimwiki diary                        |
+| `CTROL+SPACE`        | create / toggle todo item            |
 
 ### Scripts
 
