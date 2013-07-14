@@ -15,40 +15,40 @@
 	url = https://github.com/ludovicPelle/vim-xdebug.git
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
-	url = git://github.com/plasticboy/vim-markdown.git
+	url = https://github.com/plasticboy/vim-markdown.git
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
-	url = git://github.com/klen/python-mode.git
+	url = https://github.com/klen/python-mode.git
 [submodule "vim/bundle/vim-virtualenv"]
 	path = vim/bundle/vim-virtualenv
-	url = git://github.com/jmcantrell/vim-virtualenv.git
+	url = https://github.com/jmcantrell/vim-virtualenv.git
 [submodule "vim/bundle/vim-qml"]
 	path = vim/bundle/vim-qml
-	url = git://github.com/peterhoeg/vim-qml.git
+	url = https://github.com/peterhoeg/vim-qml.git
 [submodule "vim/bundle/vim-colors-solarized"]
 	path = vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "xresources"]
 	path = xresources
-	url = git://github.com/solarized/xresources.git
+	url = https://github.com/solarized/xresources.git
 [submodule "bin/gnome-terminal-solarized"]
 	path = bin/gnome-terminal-solarized
-	url = git://github.com/sigurdga/gnome-terminal-colors-solarized.git
+	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
 [submodule "dircolors"]
 	path = dircolors
-	url = git://github.com/seebi/dircolors-solarized.git
+    url = https://github.com/seebi/dircolors-solarized.git
 [submodule "vim/bundle/vim-snipmate"]
 	path = vim/bundle/vim-snipmate
-	url = git://github.com/garbas/vim-snipmate.git
+	url = https://github.com/garbas/vim-snipmate.git
 [submodule "vim/bundle/vim-addon-mw-utils"]
 	path = vim/bundle/vim-addon-mw-utils
-	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+    url = https://github.com/MarcWeber/vim-addon-mw-utils.git
 [submodule "vim/bundle/tlib-vim"]
 	path = vim/bundle/tlib-vim
-	url = git://github.com/tomtom/tlib_vim.git
-[submodule "vim/bundle/snipmate-snippets"]
-	path = vim/bundle/snipmate-snippets
-	url = git://github.com/honza/snipmate-snippets.git
+    url = https://github.com/tomtom/tlib_vim.git
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/vim-snippets"]
+	path = vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
