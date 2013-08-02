@@ -120,7 +120,10 @@ let wiki.nested_syntaxes = {'python': 'python', 'sql': 'sql', 'java': 'java'}
 let g:vimwiki_list = [wiki]
 "Folding
 let g:vimwiki_folding=1
-"Integrate vimwiki and tagbar
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctags / tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tagbar_type_vimwiki = {
     \'ctagstype': 'vimwiki',
     \'kinds': [
@@ -129,6 +132,13 @@ let g:tagbar_type_vimwiki = {
     \'sort': 0
 \}
 
+let g:tagbar_type_mkd = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:header'
+    \ ],
+\ 'sort' : 0,
+\ }
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " SCVim specific
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
