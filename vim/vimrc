@@ -107,6 +107,9 @@ colorscheme solarized
 " Let syntastic use psr2 coding standard for phpcs
 let g:syntastic_phpcs_conf="--standard=PSR2"
 
+" Disable auto-folding in vim-markdown
+let g:vim_markdown_folding_disabled=1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vimwiki specific
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
