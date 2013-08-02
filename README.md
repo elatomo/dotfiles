@@ -14,8 +14,7 @@ Expects:
 - *tmux*
 - A nice monospaced font.
 
-Don't forget to:
-- Remap your [caps lock key](http://www.noah.org/wiki/CapsLock_Remap_Howto) to something more useful.
+Don't forget to remap your [caps lock key](http://www.noah.org/wiki/CapsLock_Remap_Howto) to something more useful.
 
 ## Set up
 
