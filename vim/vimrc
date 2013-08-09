@@ -42,6 +42,7 @@ let g:mapleader = ","
 :map <leader>v <c-w>v
 " Close current window
 :map <leader>q :q<cr>
+:map <leader>qq :qa<cr>
 " Move cursor between windows
 :map <leader>j <c-w>j
 :map <leader>k <c-w>k

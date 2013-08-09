@@ -67,6 +67,7 @@ Inspired by the [xmonad](http://xmonad.org/) window manager:
 | `<leader> v` | split window horizontally          |
 | `<leader> n` | new vertical split window          |
 | `<leader> q` | close window                       |
+| `<leader> qq`| quit vim                           |
 | `<leader> j` | move to down window                |
 | `<leader> k` | move to upper window               |
 | `<leader> l` | move to right window               |
