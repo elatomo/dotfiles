@@ -37,9 +37,9 @@ let g:mapleader = ","
 " New vertical window with new file
 :map <leader>n :vnew<cr> 
 " Split current horizontally
-:map <leader>s <c-w>s
+:map <leader>v <c-w>s
 " Split current vertically
-:map <leader>v <c-w>v
+:map <leader>s <c-w>v
 " Close current window
 :map <leader>q :q<cr>
 :map <leader>qq :qa<cr>
@@ -78,7 +78,7 @@ set shiftwidth=4
 set tabstop=4
 set smarttab
 
-autocmd FileType css,less,html setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript,css,less,html setlocal shiftwidth=2 tabstop=2
 "autocmd FileType less setlocal shiftwidth=2 tabstop=2
 "autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
