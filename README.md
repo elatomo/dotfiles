@@ -1,6 +1,8 @@
 # Dotfiles
 
-Mostly *vim* for java and python on linux, enlighted by the [solarized](http://ethanschoonover.com/solarized) color scheme.
+Mostly *tmux* and *vim* for java and python on linux, enlighted by the [solarized](http://ethanschoonover.com/solarized) color scheme.
+
+Mappings are inspired by [xmonad](http://xmonad.org/).
 
 ## Requirements
 
@@ -15,6 +17,8 @@ Expects:
 - A nice monospaced font.
 
 Don't forget to remap your [caps lock key](http://www.noah.org/wiki/CapsLock_Remap_Howto) to something more useful.
+
+Nice to have: [ack](http://beyondgrep.com/), [pdfgrep](http://pdfgrep.sourceforge.net/)
 
 ## Set up
 
@@ -53,6 +57,19 @@ xrdb -merge ~/.Xresources
 
 Uses *CTRL+A* as prefix.
 
+| Shortcut            | Action                             |
+|---------------------|------------------------------------|
+| `<prefix> n`        | New window                         |
+| `<prefix> [1 .. n]` | go to window 1 .. n                |
+| `<prefix> q`        | close pane / window                |
+| `<prefix> w`        | list all windows                   |
+| `<prefix> ,`        | rename current windown             |
+| `<prefix> s`        | split window vertically            |
+| `<prefix> v`        | split window horizontally          |
+| `<prefix> <prefix>` | pane cycling                       |
+| `<prefix> x`        | toggle pane fullscreen             |
+| `<prefix> r`        | reload config file                 |
+
 ### Vim key mappings
 
 Uses *comma* (`,`) as `<leader>` key.
@@ -80,7 +97,7 @@ Inspired by the [xmonad](http://xmonad.org/) window manager:
 | Shortcut            | Action            |
 |---------------------|-------------------|
 | `<leader> t`        | open new tab      |
-| `<leader> [1 .. 6]` | got to tab 1 .. 6 |
+| `<leader> [1 .. 6]` | go to tab 1 .. 6 |
 
 #### Tools
 
