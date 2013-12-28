@@ -14,6 +14,7 @@ Expects:
 - *maven*, if doing some java.
 - *python-pip* and *virtualenvwrapper*, for python.
 - *tmux*
+- *mutt* and *abook*
 - A nice monospaced font.
 
 Don't forget to remap your [caps lock key](http://www.noah.org/wiki/CapsLock_Remap_Howto) to something more useful.
@@ -28,8 +29,9 @@ git submodule update --init
 ln -s ~/dotfiles/bash/bashrc ~/.bashrc
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-
+ln -s ~/dotfiles/mutt ~/.mutt
 ```
+
 ### Solarized
 
 Solarized `.dircolors`:
@@ -113,5 +115,5 @@ Inspired by the [xmonad](http://xmonad.org/) window manager:
 
 ### Scripts
 
-- `mvn`: mavn wrapper to colorize output.
+- `mvn`: maven wrapper to colorize output.
 - `mvn-ctags`: download maven sources and generate ctags file.
