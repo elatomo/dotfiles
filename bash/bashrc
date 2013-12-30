@@ -118,3 +118,6 @@ if [ `id -u` != '0' ] && [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
     export PIP_VIRTUALENV_BASE=$WORKON_HOME
     export PIP_RESPECT_VIRTUALENV=true
 fi
+
+# vim as default editor
+export EDITOR=vim
