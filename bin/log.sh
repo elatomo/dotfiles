@@ -4,9 +4,18 @@
 
 LOG=~/vimwiki/log.wiki
 
-echo -e "\n== $(date) ==" >> $LOG
+function tags {
+    local tags
+    local sep=" " # FIXME
+
+    for tag in "$@"; do
+        tags+="[[$tag]]$sep"
+    done
+
+    echo $tags
+}
 
 # message to file and output
 while read message; do
-    echo -e "\n$message\n" | tee -a $LOG
+    echo -e "== $(date) ==\n$(tags $@)\n$message\n" | tee -a $LOG
 done
