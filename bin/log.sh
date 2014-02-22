@@ -17,5 +17,6 @@ function tags {
 
 # message to file and output
 while read message; do
-    echo -e "== $(date) ==\n$(tags $@)\n$message\n" | tee -a $LOG
+    text+="$message\n"
 done
+echo -e "== $(date) ==\n$(tags $@)\n$text\n" | tee -a $LOG
