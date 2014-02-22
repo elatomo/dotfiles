@@ -19,4 +19,4 @@ function tags {
 while read message; do
     text+="$message\n"
 done
-echo -e "== $(date) ==\n$(tags $@)\n$text\n" | tee -a $LOG
+echo -e "== $(date) ==\n$(tags $@)\n$text" | tee -a $LOG
