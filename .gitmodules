@@ -22,9 +22,6 @@
 [submodule "xresources"]
 	path = xresources
 	url = https://github.com/solarized/xresources.git
-[submodule "bin/gnome-terminal-solarized"]
-	path = bin/gnome-terminal-solarized
-	url = https://github.com/sigurdga/gnome-terminal-colors-solarized.git
 [submodule "dircolors"]
 	path = dircolors
     url = https://github.com/seebi/dircolors-solarized.git
