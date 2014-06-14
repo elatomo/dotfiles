@@ -100,10 +100,9 @@ set foldnestmax=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Solarized colorscheme
+" colorscheme
 set background=dark
-let g:solarized_termtrans=1 " Transparent background
-colorscheme solarized
+colorscheme base16-tomorrow
 
 " Let syntastic use psr2 coding standard for phpcs
 let g:syntastic_phpcs_conf="--standard=PSR2"
