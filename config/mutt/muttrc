@@ -1,7 +1,7 @@
 # id
 set my_user = "jose@atomo.io"
 set my_host = "atomo-io.correoseguro.dinaserver.com"
-set my_pass = `gpg -dq --batch $HOME/pass.gpg | awk '/jose@atomo.io/ {print $2}'`
+set my_pass = `pass mail/jose@atomo.io | head -n 1` 
 
 set realname = "José Fernández Ramos"
 set from = $my_user
