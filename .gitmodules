@@ -1,3 +1,42 @@
 [submodule "themes/base16-xresources"]
 	path = themes/base16-xresources
 	url = https://github.com/chriskempson/base16-xresources.git
+[submodule "config/vim/bundle/nerdtree"]
+	path = config/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "config/vim/bundle/tagbar"]
+	path = config/vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "config/vim/bundle/syntastic"]
+	path = config/vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "config/vim/bundle/vim-markdown"]
+	path = config/vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "config/vim/bundle/python-mode"]
+	path = config/vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
+[submodule "config/vim/bundle/vim-virtualenv"]
+	path = config/vim/bundle/vim-virtualenv
+	url = https://github.com/jmcantrell/vim-virtualenv.git
+[submodule "config/vim/bundle/vim-snipmate"]
+	path = config/vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
+[submodule "config/vim/bundle/vim-addon-mw-utils"]
+	path = config/vim/bundle/vim-addon-mw-utils
+	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "config/vim/bundle/tlib-vim"]
+	path = config/vim/bundle/tlib-vim
+	url = https://github.com/tomtom/tlib_vim.git
+[submodule "config/vim/bundle/vim-less"]
+	path = config/vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
+[submodule "config/vim/bundle/vim-snippets"]
+	path = config/vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "config/vim/bundle/vimwiki"]
+	path = config/vim/bundle/vimwiki
+	url = https://github.com/vim-scripts/vimwiki.git
+[submodule "config/vim/bundle/base16-vim"]
+	path = config/vim/bundle/base16-vim
+	url = https://github.com/chriskempson/base16-vim.git
