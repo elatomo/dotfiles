@@ -11,8 +11,10 @@ alias ll='ls -l'
 alias la='ls -la'
 alias mkvirtualenv2='mkvirtualenv -p /usr/bin/python2.7'
 alias wiki='vim +VimwikiIndex'
-alias vimwiki='ww'
+alias vimwiki='wiki'
 alias howdoi='howdoi -c'
+alias backup='rsync -avz'
+alias sbackup='backup -e ssh'
 
 # a fancy prompt...
 PS1='[\u@\h \W]\$ '
