@@ -43,3 +43,9 @@
 [submodule "config/vim/bundle/ctrlp-vim"]
 	path = config/vim/bundle/ctrlp-vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "config/vim/bundle/vimjinja2"]
+	path = config/vim/bundle/vimjinja2
+	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
+[submodule "config/vim/bundle/vimansible"]
+	path = config/vim/bundle/vimansible
+	url = https://github.com/chase/vim-ansible-yaml.git
