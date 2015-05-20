@@ -9,6 +9,7 @@
 # TODO move to aliases file
 alias ll='ls -l'
 alias la='ls -la'
+alias mkvirtualenv='mkvirtualenv -a .'
 alias mkvirtualenv2='mkvirtualenv -p /usr/bin/python2.7'
 alias wiki='vim +VimwikiIndex'
 alias vimwiki='wiki'
