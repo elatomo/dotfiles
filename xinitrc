@@ -1,4 +1,4 @@
-XRESOURCES_THEME=~/code/lab/dotfiles/themes/base16-xresources/base16-tomorrow.dark.xresources
+XRESOURCES_THEME=~/code/lab/dotfiles/themes/base16-xresources/base16-solarized.dark.xresources
 
 # merge xresources
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
