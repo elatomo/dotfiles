@@ -17,6 +17,7 @@ alias howdoi='howdoi -c'
 alias backup='rsync -avz'
 alias sbackup='backup -e ssh'
 alias jsonpp='python -mjson.tool'
+alias ackk='ack -C3'
 
 # a fancy prompt...
 PS1='[\u@\h \W]\$ '
