@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Lock screen wrapper.
+
+i3lock -c 000000
