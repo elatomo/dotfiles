@@ -5,23 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# some aliases
-# TODO move to aliases file
-alias ll='ls -l'
-alias la='ls -la'
-alias mkvirtualenv='mkvirtualenv -a .'
-alias mkvirtualenv2='mkvirtualenv -p /usr/bin/python2.7'
-alias wiki='vim +VimwikiIndex'
-alias vimwiki='wiki'
-alias howdoi='howdoi -c'
-alias backup='rsync -avz'
-alias sbackup='backup -e ssh'
-alias jsonpp='python -mjson.tool'
-alias ack='ack --break --color-filename=cyan'
-alias ackk='ack -C3'
-
 # a fancy prompt...
 PS1='[\u@\h \W]\$ '
+
+# aliases
+source ~/.alias.sh
 
 # add ~/bin to PATH
 export PATH=$HOME/bin:$PATH
