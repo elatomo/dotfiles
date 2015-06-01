@@ -17,7 +17,7 @@ alias wiki='vim +VimwikiIndex'
 alias vimwiki='wiki'
 
 ## dev
-alias todo='cat TODO* 2>/dev/null;ack -i "TODO|FIXME"'
+alias todo='cat TODO* 2>/dev/null;ack "TODO|FIXME"'
 
 alias mkvirtualenv='mkvirtualenv -a .'
 alias mkvirtualenv2='mkvirtualenv -p /usr/bin/python2.7'
