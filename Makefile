@@ -1,6 +1,7 @@
 SHELL := /usr/bin/env bash
+THEME := `pwd`/themes/base16-xresources/base16-solarized.dark.xresources
 
-install: init install-x install-themes install-bash install-vim install-ctags \
+install: init install-x install-bash install-vim install-ctags \
          install-tmux install-git install-moc
 
 init:
@@ -11,10 +12,8 @@ install-x:
 	@ln -s `pwd`/Xresources ~/.Xresources
 	@rm -f ~/.xinitrc
 	@ln -s `pwd`/xinitrc ~/.xinitrc
-
-install-themes:
-	# TODO setup themes ~/.mythemes
-	# FIXME XRESOURCES_THEME
+	@rm -f ~/.theme.xresources
+	@ln -s ${THEME} ~/.theme.xresources
 
 install-bash:
 	@rm -f ~/.bash_aliases
