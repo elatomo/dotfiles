@@ -1,6 +1,6 @@
 # Dotfiles
 
-My *dotfiles*: mainly x, bash, vim.
+My *dotfiles*: mainly vim, bash and x.
 
 ## Requirements
 
@@ -12,7 +12,8 @@ Nice to have: [ack](http://beyondgrep.com/), [pdfgrep](http://pdfgrep.sourceforg
 
 ## Set up
 
-Just `make` it.
+    git clone https://github.com/elatomo/dotfiles.git
+    cd dotfiles && make
 
 ## Shortcuts
 
