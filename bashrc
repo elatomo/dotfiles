@@ -1,6 +1,6 @@
-#
+#! /usr/bin/env bash
+
 # ~/.bashrc
-#
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -9,7 +9,7 @@
 PS1='[\u@\h \W]\$ '
 
 # aliases
-source ~/.alias.sh
+source ~/.bash_aliases
 
 # add ~/bin to PATH
 export PATH=$HOME/bin:$PATH
