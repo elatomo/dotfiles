@@ -28,7 +28,7 @@ set hlsearch "Highlight search things
 set encoding=utf8
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mapping
+" Shortcuts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -139,12 +139,6 @@ let g:tagbar_type_mkd = {
     \ ],
 \ 'sort' : 0,
 \ }
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SCVim specific
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:sclangTerm = "gnome-terminal -t 'sclang' -x $SHELL -ic"
-let g:sclangPipeApp = "~/.vim/bundle/scvim/bin/start_pipe"
-let g:sclangDispatcher = "~/.vim/bundle/scvim/bin/sc_dispatcher"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python mode
