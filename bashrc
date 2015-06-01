@@ -8,6 +8,9 @@
 # a fancy prompt...
 PS1='[\u@\h \W]\$ '
 
+# ignore spaces and duplicates on history
+export HISTCONTROL=ignoreboth
+
 # aliases
 source ~/.bash_aliases
 
