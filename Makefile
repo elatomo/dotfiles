@@ -1,6 +1,6 @@
 SHELL := /usr/bin/env bash
 
-install: init install-x install-bash install-vim install-ctags \
+install: init install-x install-themes install-bash install-vim install-ctags \
          install-tmux install-git install-moc
 
 init:
@@ -11,6 +11,10 @@ install-x:
 	@ln -s `pwd`/Xresources ~/.Xresources
 	@rm -f ~/.xinitrc
 	@ln -s `pwd`/xinitrc ~/.xinitrc
+
+install-themes:
+	# TODO setup themes ~/.mythemes
+	# FIXME XRESOURCES_THEME
 
 install-bash:
 	@rm -f ~/.bash_aliases

@@ -1,21 +1,10 @@
 # Dotfiles
 
-Mostly *tmux* and *vim* for java and python on linux, enlighted by the [solarized](http://ethanschoonover.com/solarized) color scheme.
-
-Mappings are inspired by [xmonad](http://xmonad.org/).
+My *dotfiles*: mainly x, bash, vim.
 
 ## Requirements
 
-Expects:
-
-- A debian/ubuntu host (check *bash/bashrc* file)
-- The *dotfiles* folder cloned or symlinked in your home.
-- *ctags-exubant* for browsing code with vim using ctag files.
-- *maven*, if doing some java.
-- *python-pip* and *virtualenvwrapper*, for python.
-- *tmux*
-- *mutt* and *abook*
-- A nice monospaced font.
+*ctags-exubant* for browsing code with vim using ctag files.
 
 Don't forget to remap your [caps lock key](http://www.noah.org/wiki/CapsLock_Remap_Howto) to something more useful.
 
@@ -23,39 +12,11 @@ Nice to have: [ack](http://beyondgrep.com/), [pdfgrep](http://pdfgrep.sourceforg
 
 ## Set up
 
-```shell
-git submodule update --init
+Just `make` it.
 
-ln -s ~/dotfiles/bash/bashrc ~/.bashrc
-ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-ln -s ~/dotfiles/vim/ctags ~/.ctags
-ln -s ~/dotfiles/vim ~/.vim
-ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/mutt ~/.mutt
-```
+## Shortcuts
 
-### Solarized
-
-Solarized `.dircolors`:
-
-```shell
-ln -s ~/dotfiles/dircolors/dircolors.ansi-universal ~/.dircolors
-
-```
-If using *gnome terminal*:
-
-- Install solarized theme: `./~/dotfiles/bin/gnome-terminal-solarized/install.sh`
-- `solarize` -- switch between dark and light themes.
-
-If using *xresources*:
-
-```shell
-ln -s ~/dotfiles/xresources/solarized ~/.Xresources
-xrdb -merge ~/.Xresources
-
-```
-
-## Using it
+Inspired by the [xmonad](http://xmonad.org/) window manager:
 
 ### Tmux key mappings
 
@@ -79,8 +40,6 @@ Uses *CTRL+A* as prefix.
 Uses *comma* (`,`) as `<leader>` key.
 
 #### Windows
-
-Inspired by the [xmonad](http://xmonad.org/) window manager:
 
 | Shortcut     | Action                             |
 |--------------|------------------------------------|
