@@ -46,3 +46,6 @@
 [submodule "config/vim/bundle/vimansible"]
 	path = config/vim/bundle/vimansible
 	url = https://github.com/chase/vim-ansible-yaml.git
+[submodule "config/vim/bundle/vimwiki"]
+	path = config/vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
