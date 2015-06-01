@@ -2,13 +2,13 @@
 
 # ~/.bashrc
 
-# If not running interactively, don't do anything
+# if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # a fancy prompt...
 PS1='[\u@\h \W]\$ '
 
-# ignore spaces and duplicates on history
+# history: ignore duplicates and those starting with space
 export HISTCONTROL=ignoreboth
 
 # aliases
