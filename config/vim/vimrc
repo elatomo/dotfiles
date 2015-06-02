@@ -154,5 +154,5 @@ let g:NERDTreeIgnore = ['\.pyc$']
 " CtrlP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:ctrlp_custom_ignore = {
-    \ 'file': '\v\.(pyc)$'
+    \ 'file': '\v\.(pyc|egg)$'
 \}
