@@ -1,21 +1,23 @@
 #! /usr/bin/env bash
 
-# ~/.bashrc
+# my bashrc
+# ~~~~~~~~~
 
-# if not running interactively, don't do anything
+# only interactive mode
 [[ $- != *i* ]] && return
 
 # a fancy prompt...
 PS1='[\u@\h \W]\$ '
 
 # history: ignore duplicates and those starting with space
-export HISTCONTROL=ignoreboth
 
 # aliases
 source ~/.bash_aliases
 
-# add ~/bin to PATH
+# environment
 export PATH=$HOME/bin:$PATH
+export EDITOR=vim
+export HISTCONTROL=ignoreboth  # no space or duplicates
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -40,5 +42,3 @@ if [ `id -u` != '0' ] && [ -e "$VIRTUALENVWRAPPER" ]; then
     export PIP_RESPECT_VIRTUALENV=true
 fi
 
-# vim as default editor
-export EDITOR=vim
