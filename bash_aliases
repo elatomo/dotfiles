@@ -13,6 +13,8 @@ alias ackk='ack -C3'
 
 alias howdoi='howdoi -c'
 
+alias surf='surf -c /dev/null'
+
 alias wiki='vim +VimwikiIndex'
 alias vimwiki='wiki'
 
