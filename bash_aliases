@@ -1,7 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # ~/.alias.sh
 #
+
+# enable alias expansion
+shopt -s expand_aliases
 
 ## *nix
 alias ll='ls -l'

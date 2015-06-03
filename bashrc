@@ -3,13 +3,14 @@
 # my bashrc
 # ~~~~~~~~~
 
+# we want our aliases on non interactive mode
+export BASH_ENV=~/.bash_aliases
+
 # only interactive mode
 [[ $- != *i* ]] && return
 
 # a fancy prompt...
 PS1='[\u@\h \W]\$ '
-
-# history: ignore duplicates and those starting with space
 
 # aliases
 source ~/.bash_aliases
