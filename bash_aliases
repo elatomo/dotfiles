@@ -11,6 +11,10 @@ alias la='ls -la'
 alias ack='ack --break --color-filename=cyan'
 alias ackk='ack -C3'
 
+function ackwiki() {
+    ack "$@" ~/vimwiki
+}
+
 alias howdoi='howdoi -c'
 
 alias surf='surf -c /dev/null'
