@@ -1,10 +1,14 @@
 #!/bin/sh
+
+# Pipe and timestamp anything from standard input to log file.
 #
-# Appends and timestamp input to log file
+# Usage:
+#
+#     log.sh [TAG..]
 
 LOG=~/vimwiki/log.wiki
 
-function tags {
+tags() {
     local tags
     local sep=" " # FIXME
 
@@ -12,11 +16,13 @@ function tags {
         tags+="[[$tag]]$sep"
     done
 
-    echo $tags
+    echo "$tags"
 }
 
 # message to file and output
 while read message; do
     text+="$message\n"
 done
+
+# FIXME: in POSIX sh, echo flags are not supported
 echo -e "== $(date) ==\n$(tags $@)\n$text" | tee -a $LOG
