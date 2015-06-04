@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
+
 #
-# ~/.alias.sh
+# ~/.bash_aliases
 #
 
 # enable alias expansion
