@@ -34,7 +34,5 @@ alias mkvirtualenv2='mkvirtualenv -p /usr/bin/python2.7'
 alias jsonpp='python -mjson.tool'
 
 ## system
-alias lock_screen='i3lock -c 000000'
-
 alias backup='rsync -avz'
 alias sbackup='backup -e ssh'
