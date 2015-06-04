@@ -1,10 +1,7 @@
 #!/bin/sh
 
+# Usage: log.sh [TAG]...
 # Pipe and timestamp anything from standard input to log file.
-#
-# Usage:
-#
-#     log.sh [TAG..]
 
 LOG=~/vimwiki/log.wiki
 
