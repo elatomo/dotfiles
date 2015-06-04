@@ -18,6 +18,10 @@ function ackwiki() {
     ack "$@" ~/vimwiki
 }
 
+function acklog() {
+    ack --after-context=4 --before-context=1  "$@" ~/vimwiki/log.wiki
+}
+
 alias howdoi='howdoi -c'
 
 alias surf='surf -c /dev/null'
