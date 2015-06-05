@@ -1,44 +1,51 @@
 SHELL := /usr/bin/env bash
-THEME := `pwd`/themes/base16-xresources/base16-solarized.dark.xresources
+TARGET ?= $(HOME)
+HERE := $(PWD)
+THEME ?= ${HERE}/themes/base16-xresources/base16-solarized.dark.xresources
 
 install: init install-x install-bash install-vim install-ctags \
-         install-tmux install-git install-moc
+         install-tmux install-git install-moc install-bin
+
+test:
+	echo $(SHELL)
+	echo $(THEME)
+	echo $(TARGET)
 
 init:
 	git submodule init && git submodule update
 
 install-x:
-	rm -f ~/.Xresources
-	ln -s `pwd`/Xresources ~/.Xresources
-	rm -f ~/.xinitrc
-	ln -s `pwd`/xinitrc ~/.xinitrc
-	rm -f ~/.theme.xresources
-	ln -s ${THEME} ~/.theme.xresources
+	ln -sf $(HERE)/Xresources $(TARGET)/.Xresources
+	ln -sf $(HERE)/xinitrc $(TARGET)/.xinitrc
+	ln -sf $(THEME) $(TARGET)/.theme.xresources
 
 install-bash:
-	rm -f ~/.bash_aliases
-	ln -s `pwd`/bash_aliases ~/.bash_aliases
-	rm -f ~/.bashrc
-	ln -s `pwd`/bashrc ~/.bashrc
+	ln -sf $(HERE)/bash_aliases $(TARGET)/.bash_aliases
+	ln -sf $(HERE)/bashrc $(TARGET)/.bashrc
 
 install-vim:
-	rm -f ~/.vim
-	ln -s `pwd`/config/vim ~/.vim
-	rm -f ~/.vimrc
-	ln -s `pwd`/config/vim/vimrc ~/.vimrc
+	rm -f $(TARGET)/.vim
+	ln -s $(HERE)/config/vim $(TARGET)/.vim
+	ln -sf $(HERE)/config/vim/vimrc $(TARGET)/.vimrc
 
 install-ctags:
-	rm -f ~/.ctags
-	ln -s `pwd`/config/vim/ctags  ~/.ctags
+	ln -sf $(HERE)/config/vim/ctags $(TARGET)/.ctags
 
 install-tmux:
-	rm -f ~/.tmux.conf
-	ln -s `pwd`/config/tmux/tmux.conf ~/.tmux.conf
+	ln -sf $(HERE)/config/tmux/tmux.conf $(TARGET)/.tmux.conf
 
 install-git:
-	rm -f ~/.gitignore_global
-	ln -s `pwd`/config/git/gitignore_global ~/.gitignore_global
+	ln -sf $(HERE)/config/git/gitignore_global $(TARGET)/.gitignore_global
 
 install-moc:
-	rm -f ~/.moc
-	ln -s `pwd`/config/moc ~/.moc
+	rm -f $(TARGET)/.moc
+	ln -s $(HERE)/config/moc $(TARGET)/.moc
+
+install-bin:
+	mkdir -p $(TARGET)/bin
+	ln -sf $(HERE)/bin/lock_screen.sh $(TARGET)/bin/lock_screen.sh
+	chmod u+x $(TARGET)/bin/lock_screen.sh
+	ln -sf $(HERE)/bin/log.sh $(TARGET)/bin/log.sh
+	chmod u+x $(TARGET)/bin/log.sh
+	ln -sf $(HERE)/bin/mvn.sh $(TARGET)/bin/mvn.sh
+	chmod u+x $(TARGET)/bin/mvn.sh
