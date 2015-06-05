@@ -2,6 +2,7 @@ SHELL := /usr/bin/env bash
 TARGET ?= $(HOME)
 HERE := $(PWD)
 THEME ?= ${HERE}/themes/base16-xresources/base16-solarized.dark.xresources
+SCRIPTS = log.sh lock_screen.sh mvn.sh mvn-ctags.sh avify.sh
 
 install: init install-x install-bash install-vim install-ctags \
          install-tmux install-git install-moc install-bin
@@ -38,9 +39,8 @@ install-moc:
 
 install-bin:
 	mkdir -p $(TARGET)/bin
-	ln -sf $(HERE)/bin/lock_screen.sh $(TARGET)/bin/lock_screen.sh
-	chmod u+x $(TARGET)/bin/lock_screen.sh
-	ln -sf $(HERE)/bin/log.sh $(TARGET)/bin/log.sh
-	chmod u+x $(TARGET)/bin/log.sh
-	ln -sf $(HERE)/bin/mvn.sh $(TARGET)/bin/mvn.sh
-	chmod u+x $(TARGET)/bin/mvn.sh
+
+	for script in $(SCRIPTS); do \
+		ln -sf $(HERE)/bin/$$script $(TARGET)/bin/$$script; \
+		chmod u+x $(TARGET)/bin/$$script; \
+	done
