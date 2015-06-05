@@ -2,39 +2,20 @@
 
 My *dotfiles*: mainly vim, bash and x.
 
-## Requirements
-
-*ctags-exubant* for browsing code with vim using ctag files.
-
-Don't forget to remap your [caps lock key](http://www.noah.org/wiki/CapsLock_Remap_Howto) to something more useful.
-
-Nice to have: [ack](http://beyondgrep.com/), [pdfgrep](http://pdfgrep.sourceforge.net/)
-
-## Set up
+## Install
 
     git clone https://github.com/elatomo/dotfiles.git
     cd dotfiles && make
 
+The default target is your home. You can always override it:
+
+    TARGET=/tmp make
+
 ## Shortcuts
 
-Inspired by the [xmonad](http://xmonad.org/) window manager:
+A trial to `vimify` my computer experience.
 
-### Tmux key mappings
-
-Uses *CTRL+A* as prefix.
-
-| Shortcut            | Action                             |
-|---------------------|------------------------------------|
-| `<prefix> n`        | New window                         |
-| `<prefix> [1 .. n]` | go to window 1 .. n                |
-| `<prefix> q`        | close pane / window                |
-| `<prefix> w`        | list all windows                   |
-| `<prefix> ,`        | rename current windown             |
-| `<prefix> s`        | split window vertically            |
-| `<prefix> v`        | split window horizontally          |
-| `<prefix> <prefix>` | pane cycling                       |
-| `<prefix> x`        | toggle pane fullscreen             |
-| `<prefix> r`        | reload config file                 |
+Lots of inspiration coming from the [xmonad](http://xmonad.org/) window manager.
 
 ### Vim key mappings
 
@@ -75,7 +56,21 @@ Uses *comma* (`,`) as `<leader>` key.
 | `<leader>w<leader>w` | vimwiki diary                        |
 | `CTROL+SPACE`        | create / toggle todo item            |
 
-### Scripts
+### Tmux key mappings
 
-- `mvn`: maven wrapper to colorize output.
-- `mvn-ctags`: download maven sources and generate ctags file.
+Uses *CTRL+A* as prefix. Hopefully [caps lock key](http://www.noah.org/wiki/CapsLock_Remap_Howto)
+is already remapped :)
+
+| Shortcut            | Action                             |
+|---------------------|------------------------------------|
+| `<prefix> n`        | New window                         |
+| `<prefix> [1 .. n]` | go to window 1 .. n                |
+| `<prefix> q`        | close pane / window                |
+| `<prefix> w`        | list all windows                   |
+| `<prefix> ,`        | rename current windown             |
+| `<prefix> s`        | split window vertically            |
+| `<prefix> v`        | split window horizontally          |
+| `<prefix> <prefix>` | pane cycling                       |
+| `<prefix> x`        | toggle pane fullscreen             |
+| `<prefix> r`        | reload config file                 |
+
