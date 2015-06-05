@@ -6,11 +6,6 @@ THEME ?= ${HERE}/themes/base16-xresources/base16-solarized.dark.xresources
 install: init install-x install-bash install-vim install-ctags \
          install-tmux install-git install-moc install-bin
 
-test:
-	echo $(SHELL)
-	echo $(THEME)
-	echo $(TARGET)
-
 init:
 	git submodule init && git submodule update
 
