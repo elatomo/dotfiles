@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Surf duckduckgo.com
-#    surfddg.sh [QUERY]
+#    ddg.sh [QUERY]
 
 BASE_URL="https://www.duckduckgo.com"
 
