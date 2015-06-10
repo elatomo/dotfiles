@@ -102,7 +102,7 @@ set foldnestmax=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " colorscheme
 set background=dark
-colorscheme base16-tomorrow
+colorscheme base16-solarized
 
 " Let syntastic use psr2 coding standard for phpcs
 let g:syntastic_phpcs_conf="--standard=PSR2"
@@ -148,7 +148,7 @@ let g:pymode_lint_write = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeIgnore = ['\.pyc$']
+let g:NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CtrlP
