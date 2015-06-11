@@ -16,7 +16,7 @@ PS1='[\u@\h \W]\$ '
 source ~/.bash_aliases
 
 # environment
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$PATH
 export EDITOR=vim
 export HISTCONTROL=ignoreboth  # no space or duplicates
 
