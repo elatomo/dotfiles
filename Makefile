@@ -2,7 +2,7 @@ SHELL := /usr/bin/env bash
 TARGET ?= $(HOME)
 HERE := $(PWD)
 THEME ?= ${HERE}/themes/base16-xresources/base16-solarized.dark.xresources
-SCRIPTS = log.sh lock_screen.sh mvn.sh mvn-ctags.sh avify.sh s.sh memusg.sh
+SCRIPTS = log.sh lock_screen.sh mvn.sh mvn-ctags.sh avify.sh s.sh memusg.sh stop.sh
 
 install: init install-x install-bash install-vim install-ctags \
          install-tmux install-git install-moc install-bin
