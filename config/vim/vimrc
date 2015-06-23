@@ -101,7 +101,7 @@ set foldnestmax=2
 " Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " colorscheme
-set background=dark
+set background=light
 colorscheme base16-solarized
 
 " Let syntastic use psr2 coding standard for phpcs
