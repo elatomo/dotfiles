@@ -1,8 +1,8 @@
 export DOT_XRESOURCESTHEME=~/.theme.xresources
 
-# merge xresources
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-[[ -f $DOT_XRESOURCESTHEME ]] && xrdb -merge $DOT_XRESOURCESTHEME
+# load xresources
+if [ -f ~/.Xresources ]; then xrdb -load ~/.Xresources; fi
+if [ -f $DOT_XRESOURCESTHEME ]; then xrdb -merge $DOT_XRESOURCESTHEME; fi
 # german keyboard layout, with caps lock mapped to control
 setxkbmap -layout de -option ctrl:nocaps
 # multimonitors at work
