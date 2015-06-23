@@ -19,6 +19,10 @@ source ~/.bash_aliases
 export PATH=$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$PATH
 export EDITOR=vim
 export HISTCONTROL=ignoreboth  # no space or duplicates
+export CLICOLOR=yes
+# fix colors when paging
+export PAGER=less
+export LESS="-erX"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
