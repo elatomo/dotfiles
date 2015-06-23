@@ -20,7 +20,7 @@ install-bash:
 	ln -sf $(HERE)/bashrc $(TARGET)/.bashrc
 
 install-vim:
-	rm -f $(TARGET)/.vim
+	rm -rf $(TARGET)/.vim
 	ln -s $(HERE)/config/vim $(TARGET)/.vim
 	ln -sf $(HERE)/config/vim/vimrc $(TARGET)/.vimrc
 
