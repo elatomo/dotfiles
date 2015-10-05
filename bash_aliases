@@ -35,7 +35,8 @@ alias todo='cat TODO.* 2>/dev/null;ack "TODO|todo::"'
 alias fixme='ack "FIXME"'
 
 alias mkvirtualenv='mkvirtualenv -a .'
-alias mkvirtualenv2='mkvirtualenv -p /usr/bin/python2.7'
+alias mkvirtualenv34='mkvirtualenv -p /usr/bin/python3.4'
+alias mkvirtualenv35='mkvirtualenv -p /usr/bin/python3.5'
 
 alias jsonpp='python -mjson.tool'
 
