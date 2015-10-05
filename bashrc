@@ -5,6 +5,7 @@
 
 # we want our aliases on non interactive mode
 export BASH_ENV=~/.bash_aliases
+export PATH=$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$PATH
 
 # only interactive mode
 [[ $- != *i* ]] && return
@@ -16,7 +17,6 @@ PS1='[\u@\h \W]\$ '
 source ~/.bash_aliases
 
 # environment
-export PATH=$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$PATH
 export EDITOR=vim
 export HISTCONTROL=ignoreboth  # no space or duplicates
 export CLICOLOR=yes
@@ -40,6 +40,7 @@ fi
 # python virtualenvwrapper
 VIRTUALENVWRAPPER=`command -v virtualenvwrapper.sh`
 if [ `id -u` != '0' ] && [ -e "$VIRTUALENVWRAPPER" ]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
     export VIRTUALENV_USE_DISTRIBUTE=1      # Always use pip/distribute
     export WORKON_HOME=$HOME/.virtualenvs   # Where all virtualenvs will be stored
     source $VIRTUALENVWRAPPER
