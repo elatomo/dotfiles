@@ -34,9 +34,10 @@ alias vimwiki='wiki'
 alias todo='cat TODO.* 2>/dev/null;ack "TODO|todo::"'
 alias fixme='ack "FIXME"'
 
-alias mkvirtualenv='mkvirtualenv -a .'
-alias mkvirtualenv34='mkvirtualenv -p /usr/bin/python3.4'
-alias mkvirtualenv35='mkvirtualenv -p /usr/bin/python3.5'
+alias mkvirtualenv27='mkvirtualenv -p /usr/bin/python2.7 -a .'
+alias mkvirtualenv34='mkvirtualenv -p /usr/bin/python3.4 -a .'
+alias mkvirtualenv35='mkvirtualenv -p /usr/bin/python3.5 -a .'
+alias mkvirtualenv='mkvirtualenv34'
 
 alias jsonpp='python -mjson.tool'
 
