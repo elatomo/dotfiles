@@ -4,8 +4,9 @@ HERE := $(PWD)
 THEME ?= ${HERE}/themes/base16-xresources/base16-solarized.dark.xresources
 SCRIPTS = log.sh lock_screen.sh mvn.sh mvn-ctags.sh avify.sh s.sh memusg.sh stop.sh solarize.sh
 
-install: init install-x install-bash install-vim install-ctags \
-         install-tmux install-git install-moc install-pylint install-bin
+install: init install-x install-bash install-vim install-spacemacs \
+		 install-ctags install-tmux install-git install-moc install-pylint \
+		 install-bin
 
 init:
 	git submodule init && git submodule update
@@ -23,6 +24,9 @@ install-vim:
 	rm -rf $(TARGET)/.vim
 	ln -s $(HERE)/config/vim $(TARGET)/.vim
 	ln -sf $(HERE)/config/vim/vimrc $(TARGET)/.vimrc
+
+install-spacemacs:
+	ln -sf $(HERE)/config/spacemacs/spacemacs $(TARGET)/.spacemacs
 
 install-ctags:
 	ln -sf $(HERE)/config/vim/ctags $(TARGET)/.ctags
