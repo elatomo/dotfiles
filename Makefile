@@ -5,7 +5,7 @@ THEME ?= ${HERE}/themes/base16-xresources/base16-solarized.dark.xresources
 SCRIPTS = log.sh lock_screen.sh mvn.sh mvn-ctags.sh avify.sh s.sh memusg.sh stop.sh solarize.sh
 
 install: init install-x install-bash install-vim install-ctags \
-         install-tmux install-git install-moc install-bin
+         install-tmux install-git install-moc install-pylint install-bin
 
 init:
 	git submodule init && git submodule update
@@ -36,6 +36,9 @@ install-git:
 install-moc:
 	rm -f $(TARGET)/.moc
 	ln -s $(HERE)/config/moc $(TARGET)/.moc
+
+install-pylint:
+	ln -sf $(HERE)/config/pylint/pylint.rc $(TARGET)/.pylint.rc
 
 install-bin:
 	mkdir -p $(TARGET)/bin
