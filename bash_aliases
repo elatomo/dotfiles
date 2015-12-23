@@ -23,8 +23,6 @@ function acklog() {
     ack --after-context=4 --before-context=1  "$@" ~/vimwiki/log.wiki
 }
 
-alias mdp='mdp -i'
-
 alias howdoi='howdoi -c'
 
 alias surf='surf -c /dev/null'
@@ -39,7 +37,7 @@ alias fixme='ack "FIXME"'
 alias mkvirtualenv27='mkvirtualenv -p /usr/bin/python2.7 -a .'
 alias mkvirtualenv34='mkvirtualenv -p /usr/bin/python3.4 -a .'
 alias mkvirtualenv35='mkvirtualenv -p /usr/bin/python3.5 -a .'
-alias mkvirtualenv='mkvirtualenv34'
+alias mkvirtualenv='mkvirtualenv -p /usr/bin/python3.4 -a .'
 
 alias jsonpp='python -mjson.tool'
 
