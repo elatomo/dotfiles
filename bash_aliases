@@ -12,16 +12,21 @@ alias ll='ls -l'
 alias la='ls -la'
 
 ## tools
-alias ack='ack --break --color-filename=cyan'
-alias ackk='ack -C3'
+alias ag='ag --nogroup --color-path="0;36"'
+alias agg='ag --context=3'
 
-function ackwiki() {
-    ack "$@" ~/vimwiki
+function agwiki() {
+    ag "$@" ~/vimwiki
 }
 
-function acklog() {
-    ack --after-context=4 --before-context=1  "$@" ~/vimwiki/log.wiki
+function aglog() {
+    ag --after=4 --before=1  "$@" ~/vimwiki/log.wiki
 }
+
+alias ack='ag'
+alias ackk='agg'
+alias ackwiki='agwiki'
+alias acklog='aglog'
 
 alias howdoi='howdoi -c'
 
