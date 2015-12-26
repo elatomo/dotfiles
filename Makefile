@@ -19,6 +19,7 @@ install-x:
 install-bash:
 	ln -sf $(HERE)/bash_aliases $(TARGET)/.bash_aliases
 	ln -sf $(HERE)/bashrc $(TARGET)/.bashrc
+	ln -sf $(HERE)/inputrc $(TARGET)/.inputrc
 
 install-vim:
 	rm -rf $(TARGET)/.vim
