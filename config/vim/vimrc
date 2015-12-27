@@ -12,6 +12,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'klen/python-mode'
 Plug 'jmcantrell/vim-virtualenv'
@@ -122,6 +123,11 @@ colorscheme base16-solarized
 
 " Disable auto-folding in vim-markdown
 let g:vim_markdown_folding_disabled=1
+
+" Let ack-vim use ag if present
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
