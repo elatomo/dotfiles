@@ -3,6 +3,13 @@
 " See http://amix.dk/vim/vimrc.html
 " Reload vimrc :source .vimrc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plug plugin manager
+call plug#begin()
+Plug 'tpope/vim-sensible'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+call plug#end()
+
 " Load pathogen plugin
 call pathogen#infect()
 call pathogen#helptags()
@@ -101,17 +108,27 @@ set foldnestmax=2
 " Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " colorscheme
-set background=light
+set background=dark
 colorscheme base16-solarized
-
-" Let syntastic use psr2 coding standard for phpcs
-let g:syntastic_phpcs_conf="--standard=PSR2"
 
 " Disable auto-folding in vim-markdown
 let g:vim_markdown_folding_disabled=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vimwiki specific
+" Syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" use psr2 coding standard for phpcs
+let g:syntastic_phpcs_conf="--standard=PSR2"
+
+" disable syntastic on python (python-mode already used)
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": [],
+    \ "passive_filetypes": ["python"]
+\}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vimwiki
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let wiki = {}
 let wiki.maxhi=1 "Highlight vimwiki broken links
@@ -143,7 +160,10 @@ let g:tagbar_type_mkd = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Python mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:pymode_lint_write = 0
+" Run pylint on every save
+let g:pymode_lint_unmodified = 1
+" Pylint configuration file
+let g:pymode_lint_config = '$HOME/.pylint.rc'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
@@ -156,3 +176,11 @@ let g:NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(pyc|egg)$'
 \}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-Airline
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" enable tabline
+let g:airline#extensions#tabline#enabled = 1
+" powerline fonts
+let g:airline_powerline_fonts = 1
