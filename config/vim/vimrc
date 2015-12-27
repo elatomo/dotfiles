@@ -8,11 +8,20 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
+Plug 'majutsushi/tagbar'
+Plug 'vimwiki/vimwiki'
+Plug 'klen/python-mode'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'groenewege/vim-less'
+Plug 'pearofducks/ansible-vim'
+Plug 'chriskempson/base16-vim'
 call plug#end()
-
-" Load pathogen plugin
-call pathogen#infect()
-call pathogen#helptags()
 
 " How many lines of history VIM has to remember
 set history=700
