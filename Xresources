@@ -1,7 +1,7 @@
 ! xresources
 xterm*termName: xterm-256color
 xterm*locale: true
-xterm*faceName: Terminus:style=Regular:size=12:antialias=false
+xterm*faceName: Terminess\ Powerline:style=Regular:size=12:antialias=false
 xterm*selectToClipboard: true
 xterm*bellIsUrgent: true
 

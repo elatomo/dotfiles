@@ -4,12 +4,17 @@ HERE := $(PWD)
 THEME ?= ${HERE}/themes/base16-xresources/base16-solarized.dark.xresources
 SCRIPTS = log.sh lock_screen.sh mvn.sh mvn-ctags.sh avify.sh s.sh memusg.sh stop.sh solarize.sh
 
-install: init install-x install-bash install-vim install-spacemacs \
+install: init install-fonts install-x install-bash install-vim install-spacemacs \
 		 install-ctags install-tmux install-git install-moc install-pylint \
 		 install-bin
 
 init:
 	git submodule init && git submodule update
+
+install-fonts:
+	mkdir -p $(TARGET)/.local/share
+	ln -sf $(HERE)/fonts $(TARGET)/.local/share/
+	fc-cache
 
 install-x:
 	ln -sf $(HERE)/Xresources $(TARGET)/.Xresources
