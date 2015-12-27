@@ -35,6 +35,8 @@ alias surf='surf -c /dev/null'
 alias wiki='vim +VimwikiIndex'
 alias vimwiki='wiki'
 
+alias wgetpage='wget -p -k'
+
 ## dev
 alias todo='cat TODO.* 2>/dev/null;ack "TODO|todo::"'
 alias fixme='ack "FIXME"'
