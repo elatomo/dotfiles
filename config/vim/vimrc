@@ -119,7 +119,7 @@ set foldnestmax=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " colorscheme
 set background=dark
-colorscheme base16-solarized
+colorscheme base16-monokai
 
 " Disable auto-folding in vim-markdown
 let g:vim_markdown_folding_disabled=1
