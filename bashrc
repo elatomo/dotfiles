@@ -5,7 +5,7 @@
 
 # we want our aliases on non interactive mode
 export BASH_ENV=~/.bash_aliases
-export PATH=$HOME/bin:$HOME/.gem/ruby/2.2.0/bin:$PATH
+export PATH=$HOME/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH
 
 # only interactive mode
 [[ $- != *i* ]] && return
