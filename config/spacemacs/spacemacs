@@ -31,6 +31,7 @@ values."
      git
      markdown
      org
+     nim
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -197,6 +198,17 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+
+  ;; Nim glue
+  (defun my/nim-compile-run ()
+    (interactive)
+    (save-buffer)
+    (setq command-string (concat "nim compile --run " (buffer-file-name)))
+    (shell-command command-string)
+  )
+
+  (spacemacs/set-leader-keys-for-major-mode 'nim-mode
+      "cc" 'my/nim-compile-run)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
