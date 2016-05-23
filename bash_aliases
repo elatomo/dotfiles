@@ -48,6 +48,8 @@ alias mkvirtualenv='mkvirtualenv -p /usr/bin/python3.4 -a .'
 
 alias jsonpp='python -mjson.tool'
 
+alias git-graph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
 ## system
 alias backup='rsync -avz'
 alias sbackup='backup -e ssh'
