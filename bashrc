@@ -39,12 +39,5 @@ fi
 
 # python virtualenvwrapper
 VIRTUALENVWRAPPER=`command -v virtualenvwrapper.sh`
-if [ `id -u` != '0' ] && [ -e "$VIRTUALENVWRAPPER" ]; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
-    export VIRTUALENV_USE_DISTRIBUTE=1      # Always use pip/distribute
-    export WORKON_HOME=$HOME/.virtualenvs   # Where all virtualenvs will be stored
-    source $VIRTUALENVWRAPPER
-    export PIP_VIRTUALENV_BASE=$WORKON_HOME
-    export PIP_RESPECT_VIRTUALENV=true
-fi
-
+export WORKON_HOME=$HOME/.virtualenvs
+source $VIRTUALENVWRAPPER
