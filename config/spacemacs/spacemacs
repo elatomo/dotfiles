@@ -28,7 +28,7 @@ values."
      syntax-checking
      emacs-lisp
      scheme
-     python
+     (python :variables python-test-runner 'pytest)
      git
      markdown
      org
