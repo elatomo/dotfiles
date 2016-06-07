@@ -37,6 +37,12 @@ alias vimwiki='wiki'
 
 alias wgetpage='wget -p -k'
 
+function wgetmp3() {
+    workon music
+    youtube-dl -x --audio-quality 0 --audio-format mp3 "$@"
+    deactivate
+}
+
 ## dev
 alias todo='cat TODO.* 2>/dev/null;ack "TODO|todo::"'
 alias fixme='ack "FIXME"'
