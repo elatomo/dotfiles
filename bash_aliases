@@ -43,6 +43,9 @@ function wgetmp3() {
     deactivate
 }
 
+alias xclipcopy='xclip -selection clipboard'
+alias xclippaste='xclip -o -selection clipboard'
+
 ## dev
 alias todo='cat TODO.* 2>/dev/null;ack "TODO|todo::"'
 alias fixme='ack "FIXME"'
