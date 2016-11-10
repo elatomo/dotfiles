@@ -217,14 +217,16 @@ layers configuration. You are free to put any user code."
 
   ;; path to nimsuggest, required for autocomplete
   (custom-set-variables
-   '(nim-nimsuggest-path "~/.nimble/bin/nimsuggest"))
+   '(nim-nimsuggest-path "~/.nimble/bin/nimsuggest")
+   '(org-plantuml-jar-path "~/bin/plantuml.jar"))
 
   ;; org-babel and python
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
      (shell . t)
-     (clojure . t)))
+     (clojure . t)
+     (plantuml .t)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
