@@ -41,3 +41,5 @@ fi
 VIRTUALENVWRAPPER=`command -v virtualenvwrapper.sh`
 export WORKON_HOME=$HOME/.virtualenvs
 source $VIRTUALENVWRAPPER
+# karma js and chromium
+export CHROME_BIN='/usr/bin/chromium'

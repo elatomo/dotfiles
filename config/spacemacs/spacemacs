@@ -37,6 +37,7 @@ values."
      yaml
      javascript
      html
+     typescript
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -48,7 +49,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(ob-typescript)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -226,7 +227,8 @@ layers configuration. You are free to put any user code."
    '((python . t)
      (shell . t)
      (clojure . t)
-     (plantuml .t)))
+     (plantuml .t)
+     (typescript .t)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
