@@ -32,7 +32,9 @@ install-vim:
 	ln -sf $(HERE)/config/vim/vimrc $(TARGET)/.vimrc
 
 install-spacemacs:
+	mkdir -p $(TARGET)/.spacemacs.d
 	ln -sf $(HERE)/config/spacemacs/spacemacs $(TARGET)/.spacemacs
+	ln -sf $(HERE)/config/spacemacs/snippets $(TARGET)/.spacemacs.d/snippets
 
 install-ctags:
 	ln -sf $(HERE)/config/vim/ctags $(TARGET)/.ctags
