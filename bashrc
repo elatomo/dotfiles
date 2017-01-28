@@ -43,3 +43,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 source $VIRTUALENVWRAPPER
 # karma js and chromium
 export CHROME_BIN='/usr/bin/chromium'
+
+# golang
+export GOPATH="$HOME/code/golang"
+export PATH=$HOME/code/golang/bin:$PATH
