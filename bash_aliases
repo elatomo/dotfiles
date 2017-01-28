@@ -38,8 +38,8 @@ alias vimwiki='wiki'
 alias wgetpage='wget -p -k'
 
 function wgetmp3() {
-    workon music
-    youtube-dl -x --audio-quality 0 --audio-format mp3 "$@"
+    workon -n music
+    youtube-dl -o "%(autonumber)s-%(title)s-%(id)s.%(ext)s" -x --audio-quality 0 --audio-format mp3 "$@"
     deactivate
 }
 
