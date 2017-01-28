@@ -22,6 +22,7 @@ install-x:
 	ln -sf $(THEME) $(TARGET)/.theme.xresources
 
 install-bash:
+	ln -sf $(HERE)/bash_profile $(TARGET)/.bash_profile
 	ln -sf $(HERE)/bash_aliases $(TARGET)/.bash_aliases
 	ln -sf $(HERE)/bashrc $(TARGET)/.bashrc
 	ln -sf $(HERE)/inputrc $(TARGET)/.inputrc
