@@ -2,7 +2,6 @@
 # ~/.bash_profile
 #
 
-echo "on bash profile"  # FIXME
 export BASH_ENV=~/.bash_aliases
 export PATH=$HOME/bin:$HOME/.gem/ruby/2.3.0/bin:$PATH
 
