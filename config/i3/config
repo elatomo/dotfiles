@@ -156,4 +156,16 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        mode hide
+        modifier $mod
 }
+
+# misc window settings
+hide_edge_borders smart
+
+# apps to workspaces
+assign [title="^emacs@"] 2
+assign [title="^fki-"] 3
+
+# open emacs on first workspace
+exec emacs; workspace 2
