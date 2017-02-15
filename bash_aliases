@@ -49,8 +49,7 @@ alias fixme='ack "FIXME"'
 
 alias mkvirtualenv27='mkvirtualenv -p /usr/bin/python2.7 -a .'
 alias mkvirtualenv34='mkvirtualenv -p /usr/bin/python3.4 -a .'
-alias mkvirtualenv35='mkvirtualenv -p /usr/bin/python3.5 -a .'
-alias mkvirtualenv='mkvirtualenv -p /usr/bin/python3.4 -a .'
+alias mkvirtualenv='mkvirtualenv -a .'
 
 alias jsonpp='python -mjson.tool'
 
