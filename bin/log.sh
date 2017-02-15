@@ -3,7 +3,7 @@
 # Usage: log.sh [TAG]...
 # Pipe and timestamp anything from standard input to log file.
 
-LOG=~/vimwiki/log.wiki
+LOG=~/org/log.wiki
 
 tags() {
     local tags

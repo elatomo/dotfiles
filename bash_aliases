@@ -15,25 +15,22 @@ alias la='ls -la'
 alias ag='ag --nogroup --color-path="0;36"'
 alias agg='ag --context=3'
 
-function agwiki() {
-    ag "$@" ~/vimwiki
+function agorg() {
+    ag "$@" ~/org
 }
 
 function aglog() {
-    ag --after=4 --before=1  "$@" ~/vimwiki/log.wiki
+    ag --after=4 --before=1  "$@" ~/org/log.wiki
 }
 
 alias ack='ag'
 alias ackk='agg'
-alias ackwiki='agwiki'
+alias ackorg='agorg'
 alias acklog='aglog'
 
 alias howdoi='howdoi -c'
 
 alias surf='surf -c /dev/null'
-
-alias wiki='vim +VimwikiIndex'
-alias vimwiki='wiki'
 
 alias wgetpage='wget -p -k'
 
