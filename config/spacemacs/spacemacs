@@ -199,7 +199,12 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-  )
+
+  (setq-default
+   ;; default browser
+   browse-url-generic-program "surf"
+   browse-url-browser-function 'browse-url-generic
+  ))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
