@@ -4,9 +4,9 @@ HERE := $(PWD)
 THEME ?= ${HERE}/themes/base16-xresources/base16-monokai.dark.xresources
 SCRIPTS = ideaa.sh log.sh lock_screen.sh mvn.sh mvn-ctags.sh avify.sh s.sh memusg.sh stop.sh solarize.sh
 
-install: init install-fonts install-x install-bash install-vim install-spacemacs \
-		 install-ctags install-tmux install-git install-moc install-pylint \
-		 install-bin
+install: init install-fonts install-x install-i3 install-bash install-vim \
+	install-spacemacs install-ctags install-tmux install-git install-moc \
+	install-pylint install-bin
 
 init:
 	git submodule init && git submodule update
@@ -20,6 +20,10 @@ install-x:
 	ln -sf $(HERE)/Xresources $(TARGET)/.Xresources
 	ln -sf $(HERE)/xinitrc $(TARGET)/.xinitrc
 	ln -sf $(THEME) $(TARGET)/.theme.xresources
+
+install-i3:
+	mkdir -p $(TARGET)/.config/i3
+	ln -sf $(HERE)/config/i3/config $(TARGET)/.config/i3/config
 
 install-bash:
 	ln -sf $(HERE)/bash_profile $(TARGET)/.bash_profile
