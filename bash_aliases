@@ -40,6 +40,15 @@ function wgetmp3() {
     deactivate
 }
 
+transfer() {
+    # write to output to tmpfile because of progress bar
+    tmpfile=$( mktemp -t transferXXX )
+    curl --progress-bar -H "Max-Downloads: 1" -H "Max-Days: 3" \
+        --upload-file $1 https://transfer.sh/$(basename $1) >> $tmpfile;
+    cat $tmpfile;
+    rm -f $tmpfile;
+}
+
 alias xclipcopy='xclip -selection clipboard'
 alias xclippaste='xclip -o -selection clipboard'
 
