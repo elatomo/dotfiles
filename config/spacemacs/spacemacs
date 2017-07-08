@@ -340,6 +340,7 @@ layers configuration. You are free to put any user code."
    'org-babel-load-languages
    '((python . t)
      (shell . t)
+     (scheme . t)
      (clojure . t)
      (plantuml .t)
      (typescript .t)))
