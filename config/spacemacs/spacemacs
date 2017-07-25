@@ -142,7 +142,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Terminus"
+   dotspacemacs-default-font '("Terminess Powerline"
                                :size 14.0
                                :weight normal
                                :width normal
