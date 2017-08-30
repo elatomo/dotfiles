@@ -343,6 +343,7 @@ layers configuration. You are free to put any user code."
      (scheme . t)
      (clojure . t)
      (plantuml .t)
+     (gnuplot .t)
      (typescript .t)))
 )
 
