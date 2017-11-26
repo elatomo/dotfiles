@@ -310,8 +310,7 @@ user code."
 
   (setq-default
    ;; default browser
-   browse-url-generic-program "surf"
-   browse-url-browser-function 'browse-url-generic
+   browse-url-browser-function 'eww-browse-url
   ))
 
 (defun dotspacemacs/user-config ()
