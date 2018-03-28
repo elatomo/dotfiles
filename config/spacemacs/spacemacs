@@ -334,6 +334,10 @@ layers configuration. You are free to put any user code."
    '(nim-nimsuggest-path "~/.nimble/bin/nimsuggest")
    '(org-plantuml-jar-path "~/bin/plantuml.jar"))
 
+
+  ;; custom org-export backends
+  (setq org-export-backends (quote (ascii html icalendar latex md odt)))
+
   ;; org-babel and python
   (org-babel-do-load-languages
    'org-babel-load-languages
