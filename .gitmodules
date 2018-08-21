@@ -1,3 +1,6 @@
 [submodule "themes/base16-xresources"]
 	path = themes/base16-xresources
 	url = https://github.com/chriskempson/base16-xresources.git
+[submodule "config/spacemacs/layers/platformio-layer"]
+	path = config/spacemacs/layers/platformio-layer
+	url = https://github.com/LeartS/platformio-layer.git
