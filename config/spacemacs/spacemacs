@@ -300,16 +300,15 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-
-  (setq-default
-   ;; default browser
-   browse-url-browser-function 'eww-browse-url
-  ))
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+
+  ;; default browser
+  (setq-default browse-url-browser-function 'browse-url-firefox)
 
   ;; Nim glue
   (defun my/nim-compile-run ()
