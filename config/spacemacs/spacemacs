@@ -327,11 +327,51 @@ layers configuration. You are free to put any user code."
    '(nim-nimsuggest-path "~/.nimble/bin/nimsuggest")
    '(org-plantuml-jar-path "~/bin/plantuml.jar"))
 
+  ;; -- ORG CONFIGURATION --
+  ;; plenty of inspiration from https://github.com/oelu/dotfiles/blob/master/spacemacs
 
-  ;; custom org-export backends
+  ;; org: task states configuration
+  (setq org-todo-keywords
+        (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+                (sequence "WAITING(w)" "HOLD(h)" "|" "CANCELLED(c)"))))
+
+  ;; org: automatically add tags when state changes occur
+  (setq org-todo-state-tags-triggers
+        (quote (("CANCELLED" ("CANCELLED" . t))
+                ("WAITING" ("WAITING" . t))
+                ("HOLD" ("WAITING") ("HOLD" . t))
+                (done ("WAITING") ("HOLD"))
+                ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
+                ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
+                ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
+
+  ;; org: agenda configuration
+  (setq org-agenda-files (list "~/org/home.org" "~/org/solvemate.org"))
+  (setq org-agenda-custom-commands
+        '(
+          ("n" todo "NEXT")
+          ("w" todo "WAITING")
+          ("d" "Agenda + Next Actions" ((agenda) (todo "NEXT")))
+          )
+        )
+
+  ;; org: capture
+  (setq org-capture-templates
+        '(
+          ;; file+olp specifies to full path to fill the Template
+          ("w" "Work" entry (file+olp "~/org/solvemate.org" "Tasks")
+           "* TODO %? \n:PROPERTIES:\n:CREATED: %U\n:END:")
+          ("h" "Home" entry (file+olp "~/org/home.org" "Tasks")
+           "* TODO %? \n:PROPERTIES:\n:CREATED: %U\n:END:")
+          ))
+
+  (setq org-refile-use-outline-path t)
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
+
+  ;; org: custom export backends
   (setq org-export-backends (quote (ascii html icalendar latex md odt)))
 
-  ;; org-babel and python
+  ;; org: babel and python
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
