@@ -363,8 +363,13 @@ layers configuration. You are free to put any user code."
            "* TODO %? \n:PROPERTIES:\n:CREATED: %U\n:END:")
           ))
 
+  ;; org: refile
   (setq org-refile-use-outline-path t)
-  (setq org-refile-targets '((org-agenda-files :maxlevel . 2)))
+  (setq org-refile-targets
+        '(
+          (org-agenda-files :level . 1)
+          ("~/org/maybe.org" :level . 1)
+          ))
 
   ;; org: custom export backends
   (setq org-export-backends (quote (ascii html icalendar latex md odt)))
