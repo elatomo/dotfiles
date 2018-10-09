@@ -372,6 +372,13 @@ layers configuration. You are free to put any user code."
           ))
 
   ;; org: custom export backends
+  (with-eval-after-load 'org
+    (require 'ox-confluence)
+    (org-export-define-derived-backend 'jira 'confluence
+                                       :menu-entry
+                                       '(?j "Export to JIRA"
+                                            ((?j "As JIRA buffer" org-confluence-export-as-confluence))))
+    )
   (setq org-export-backends (quote (ascii html icalendar latex md odt)))
 
   ;; org: babel and python
