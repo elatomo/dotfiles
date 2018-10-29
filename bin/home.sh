@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# only interactive mode
+figlet Home
+
 i3-sensible-terminal \
     -T home \
-    -e sudo netctl start home
+    -e "sudo netctl start home"
