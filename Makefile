@@ -1,8 +1,8 @@
 SHELL := /usr/bin/env bash
 TARGET ?= $(HOME)
 HERE := $(PWD)
-SCRIPTS = ideaa.sh log.sh lock_screen.sh mvn.sh mvn-ctags.sh avify.sh s.sh memusg.sh stop.sh solarize.sh synczoom.sh home.sh
 THEME ?= ${HERE}/themes/base16-xresources/xresources/base16-spacemacs-256.Xresources
+SCRIPTS = ideaa.sh log.sh lock_screen.sh mvn.sh mvn-ctags.sh avify.sh s.sh memusg.sh stop.sh solarize.sh synczoom.sh home.sh work.sh
 
 install: init install-fonts install-x install-i3 install-bash install-vim \
 	install-spacemacs install-ctags install-tmux install-git install-moc \
