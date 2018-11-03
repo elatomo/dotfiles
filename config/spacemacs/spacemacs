@@ -46,13 +46,11 @@ values."
      git
      markdown
      org
-     nim
      clojure
      yaml
      javascript
      html
      typescript
-     (go :variables go-use-gometalinter t)
      ansible
      )
    ;; List of additional packages that will be installed without being
@@ -310,20 +308,7 @@ layers configuration. You are free to put any user code."
   ;; default browser
   (setq-default browse-url-browser-function 'browse-url-firefox)
 
-  ;; Nim glue
-  (defun my/nim-compile-run ()
-    (interactive)
-    (save-buffer)
-    (setq command-string (concat "nim compile --run " (buffer-file-name)))
-    (shell-command command-string)
-  )
-
-  (spacemacs/set-leader-keys-for-major-mode 'nim-mode
-      "cc" 'my/nim-compile-run)
-
-  ;; path to nimsuggest, required for autocomplete
   (custom-set-variables
-   '(nim-nimsuggest-path "~/.nimble/bin/nimsuggest")
    '(org-plantuml-jar-path "~/bin/plantuml.jar"))
 
   ;; -- ORG CONFIGURATION --
