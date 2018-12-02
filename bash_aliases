@@ -28,8 +28,6 @@ alias ackk='agg'
 alias ackorg='agorg'
 alias acklog='aglog'
 
-alias howdoi='howdoi -c'
-
 alias wgetpage='wget -p -k'
 
 function wgetmp3() {
