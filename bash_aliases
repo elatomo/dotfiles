@@ -23,11 +23,6 @@ function aglog() {
     ag --after=4 --before=1  "$@" ~/org/log.wiki
 }
 
-alias ack='ag'
-alias ackk='agg'
-alias ackorg='agorg'
-alias acklog='aglog'
-
 alias wgetpage='wget -p -k'
 
 function wgetmp3() {
