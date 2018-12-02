@@ -30,8 +30,6 @@ alias acklog='aglog'
 
 alias howdoi='howdoi -c'
 
-alias surf='surf -c /dev/null'
-
 alias wgetpage='wget -p -k'
 
 function wgetmp3() {
