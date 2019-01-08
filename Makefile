@@ -4,17 +4,12 @@ HERE := $(PWD)
 THEME ?= ${HERE}/themes/base16-xresources/xresources/base16-spacemacs-256.Xresources
 SCRIPTS = ideaa.sh log.sh lock_screen.sh mvn.sh mvn-ctags.sh avify.sh s.sh memusg.sh stop.sh solarize.sh synczoom.sh home.sh work.sh
 
-install: init install-fonts install-x install-i3 install-bash install-vim \
+install: init install-x install-i3 install-bash install-vim \
 	install-spacemacs install-ctags install-tmux install-git install-moc \
 	install-pylint install-bin
 
 init:
 	git submodule init && git submodule update
-
-install-fonts:
-	mkdir -p $(TARGET)/.local/share
-	ln -sf $(HERE)/fonts $(TARGET)/.local/share/
-	fc-cache
 
 install-x:
 	ln -sf $(HERE)/Xresources $(TARGET)/.Xresources
