@@ -19,6 +19,8 @@ install-x:
 install-i3:
 	mkdir -p $(TARGET)/.config/i3
 	ln -sf $(HERE)/config/i3/config $(TARGET)/.config/i3/config
+	mkdir -p $(TARGET)/.config/i3status
+	ln -sf $(HERE)/config/i3status/config $(TARGET)/.config/i3status/config
 
 install-bash:
 	ln -sf $(HERE)/bash_profile $(TARGET)/.bash_profile
