@@ -50,8 +50,8 @@ alias xclippaste='xclip -o -selection clipboard'
 alias todo='cat TODO.* 2>/dev/null;ack "TODO|todo::"'
 alias fixme='ack "FIXME"'
 
-alias mkvirtualenv27='mkvirtualenv -p /usr/bin/python2.7 -a .'
-alias mkvirtualenv34='mkvirtualenv -p /usr/bin/python3.4 -a .'
+alias mkvirtualenv37='mkvirtualenv -p /usr/bin/python3.7 -a .'
+alias mkvirtualenv38='mkvirtualenv -p /usr/bin/python3.8 -a .'
 alias mkvirtualenv='mkvirtualenv -a .'
 
 alias jsonpp='python -mjson.tool'
