@@ -10,6 +10,9 @@ shopt -s expand_aliases
 ## *nix
 alias ll='ls -l'
 alias la='ls -la'
+alias cp="cp -i"                          # confirm before overwriting something
+alias df='df -h'                          # human-readable sizes
+alias free='free -m'                      # show sizes in MB
 
 ## tools
 alias ag='ag --nogroup --color-path="0;36"'
