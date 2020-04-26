@@ -2,12 +2,9 @@ SHELL := /usr/bin/env bash
 TARGET ?= $(HOME)
 HERE := $(PWD)
 
-install: init install-x install-i3 install-bash install-vim \
+install: install-x install-i3 install-bash install-vim \
 	install-spacemacs install-tmux install-git install-moc \
 	install-pylint install-bin
-
-init:
-	git submodule init && git submodule update
 
 install-x:
 	ln -sf $(HERE)/Xkbmap $(TARGET)/.Xkbmap
@@ -34,7 +31,6 @@ install-spacemacs:
 	mkdir -p $(TARGET)/.spacemacs.d
 	ln -sf $(HERE)/config/spacemacs/spacemacs $(TARGET)/.spacemacs
 	ln -sf $(HERE)/config/spacemacs/snippets $(TARGET)/.spacemacs.d/snippets
-	ln -sf $(HERE)/config/spacemacs/layers $(TARGET)/.spacemacs.d/layers
 
 install-tmux:
 	ln -sf $(HERE)/config/tmux/tmux.conf $(TARGET)/.tmux.conf

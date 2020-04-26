@@ -1,3 +1,0 @@
-[submodule "config/spacemacs/layers/platformio-layer"]
-	path = config/spacemacs/layers/platformio-layer
-	url = https://github.com/LeartS/platformio-layer.git
