@@ -2,10 +2,9 @@ SHELL := /usr/bin/env bash
 TARGET ?= $(HOME)
 HERE := $(PWD)
 THEME ?= ${HERE}/themes/base16-xresources/xresources/base16-spacemacs-256.Xresources
-SCRIPTS = ideaa.sh log.sh lock_screen.sh mvn.sh mvn-ctags.sh avify.sh s.sh memusg.sh stop.sh solarize.sh synczoom.sh home.sh work.sh
 
 install: init install-x install-i3 install-bash install-vim \
-	install-spacemacs install-ctags install-tmux install-git install-moc \
+	install-spacemacs install-tmux install-git install-moc \
 	install-pylint install-bin
 
 init:
@@ -37,9 +36,7 @@ install-spacemacs:
 	mkdir -p $(TARGET)/.spacemacs.d
 	ln -sf $(HERE)/config/spacemacs/spacemacs $(TARGET)/.spacemacs
 	ln -sf $(HERE)/config/spacemacs/snippets $(TARGET)/.spacemacs.d/snippets
-
-install-ctags:
-	ln -sf $(HERE)/config/vim/ctags $(TARGET)/.ctags
+	ln -sf $(HERE)/config/spacemacs/layers $(TARGET)/.spacemacs.d/layers
 
 install-tmux:
 	ln -sf $(HERE)/config/tmux/tmux.conf $(TARGET)/.tmux.conf
@@ -53,12 +50,3 @@ install-moc:
 
 install-pylint:
 	ln -sf $(HERE)/config/pylint/pylint.rc $(TARGET)/.pylint.rc
-
-install-bin:
-	mkdir -p $(TARGET)/bin
-
-	for script in $(SCRIPTS); do \
-		ln -sf $(HERE)/bin/$$script $(TARGET)/bin/$$script; \
-		chmod u+x $(TARGET)/bin/$$script; \
-	done
-	# TODO: remove broken links
