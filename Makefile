@@ -1,7 +1,6 @@
 SHELL := /usr/bin/env bash
 TARGET ?= $(HOME)
 HERE := $(PWD)
-THEME ?= ${HERE}/themes/base16-xresources/xresources/base16-spacemacs-256.Xresources
 
 install: init install-x install-i3 install-bash install-vim \
 	install-spacemacs install-tmux install-git install-moc \
@@ -11,9 +10,8 @@ init:
 	git submodule init && git submodule update
 
 install-x:
+	ln -sf $(HERE)/Xkbmap $(TARGET)/.Xkbmap
 	ln -sf $(HERE)/Xresources $(TARGET)/.Xresources
-	ln -sf $(HERE)/xinitrc $(TARGET)/.xinitrc
-	ln -sf $(THEME) $(TARGET)/.theme.xresources
 
 install-i3:
 	mkdir -p $(TARGET)/.config/i3
