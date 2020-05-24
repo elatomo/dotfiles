@@ -2,7 +2,7 @@ SHELL := /usr/bin/env bash
 TARGET ?= $(HOME)
 HERE := $(PWD)
 
-install: install-x install-i3 install-bash install-vim \
+install: install-x install-i3 install-shell install-vim \
 	install-spacemacs install-tmux install-git install-moc \
 	install-pylint install-bin
 
@@ -16,8 +16,8 @@ install-i3:
 	mkdir -p $(TARGET)/.config/i3status
 	ln -sf $(HERE)/config/i3status/config $(TARGET)/.config/i3status/config
 
-install-bash:
-	ln -sf $(HERE)/bash_profile $(TARGET)/.bash_profile
+install-shell:
+	ln -sf $(HERE)/profile $(TARGET)/.profile
 	ln -sf $(HERE)/bash_aliases $(TARGET)/.bash_aliases
 	ln -sf $(HERE)/bashrc $(TARGET)/.bashrc
 	ln -sf $(HERE)/inputrc $(TARGET)/.inputrc
