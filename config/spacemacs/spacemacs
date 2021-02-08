@@ -51,7 +51,7 @@ values."
      yaml
      javascript
      html
-     typescript
+     (typescript :variables typescript-indent-level 2)
      ansible
      )
    ;; List of additional packages that will be installed without being
