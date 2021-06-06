@@ -15,15 +15,14 @@ alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 
 ## tools
-alias ag='ag --nogroup --color-path="0;36"'
-alias agg='ag --context=3'
+alias rgg='rg --context=3'
 
-function agorg() {
-    ag "$@" ~/org
+function rgorg() {
+    rg "$@" ~/org
 }
 
-function aglog() {
-    ag --after=4 --before=1  "$@" ~/org/log.wiki
+function rglog() {
+    rgg "$@" ~/org/log.wiki
 }
 
 alias wgetpage='wget -p -k'
