@@ -37,6 +37,7 @@ install-tmux:
 
 install-git:
 	ln -sf $(HERE)/config/git/gitignore_global $(TARGET)/.gitignore_global
+	git config --global core.excludesfile $(TARGET)/.gitignore_global
 
 install-moc:
 	rm -f $(TARGET)/.moc
