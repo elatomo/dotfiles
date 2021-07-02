@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: plantuml
+# key: u
+# --
+#+BEGIN_SRC plantuml :file ${1:file}
+title $2
+#+END_SRC
