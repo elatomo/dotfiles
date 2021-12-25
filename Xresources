@@ -21,7 +21,6 @@ Xft.hintstyle:  hintslight
 *background:            S_base3
 *foreground:            S_base00
 *fadeColor:             S_base3
-*cursorColor:           S_base01
 *pointerColorBackground:S_base1
 *pointerColorForeground:S_base01
 
@@ -66,6 +65,7 @@ Xft.hintstyle:  hintslight
 *color7:                S_base2
 *color15:               S_base3
 
+*cursorColor:           S_magenta
 
 XTerm*faceName:          Fixed
 XTerm*faceSize:          11
