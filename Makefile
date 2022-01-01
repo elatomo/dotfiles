@@ -4,7 +4,7 @@ HERE := $(PWD)
 
 install: install-x install-i3 install-shell install-vim \
 	install-spacemacs install-tmux install-git install-moc \
-	install-pylint install-bin
+	install-pylint install-bin install-gtk
 
 install-x:
 	ln -sf $(HERE)/Xkbmap $(TARGET)/.Xkbmap
@@ -45,3 +45,10 @@ install-moc:
 
 install-pylint:
 	ln -sf $(HERE)/config/pylint/pylint.rc $(TARGET)/.pylint.rc
+
+install-gtk:
+	rm -f $(TARGET)/.gtkrc-2.0
+	ln -s $(HERE)/config/gtk-2.0/gtkrc-2.0 $(TARGET)/.gtkrc-2.0
+	mkdir -p $(TARGET)/.config/gtk-3.0
+	rm -f $(TARGET)/.config/gtk-3.0/settings.ini
+	ln -s $(HERE)/config/gtk-3.0/settings.ini $(TARGET)/.config/gtk-3.0/settings.ini
