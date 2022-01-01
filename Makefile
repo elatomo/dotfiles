@@ -2,7 +2,7 @@ SHELL := /usr/bin/env bash
 TARGET ?= $(HOME)
 HERE := $(PWD)
 
-install: install-x install-i3 install-shell install-vim \
+install: install-x install-i3 install-shell \
 	install-spacemacs install-tmux install-git install-moc \
 	install-pylint install-bin install-gtk
 
@@ -21,11 +21,6 @@ install-shell:
 	ln -sf $(HERE)/bash_aliases $(TARGET)/.bash_aliases
 	ln -sf $(HERE)/bashrc $(TARGET)/.bashrc
 	ln -sf $(HERE)/inputrc $(TARGET)/.inputrc
-
-install-vim:
-	rm -rf $(TARGET)/.vim
-	ln -s $(HERE)/config/vim $(TARGET)/.vim
-	ln -sf $(HERE)/config/vim/vimrc $(TARGET)/.vimrc
 
 install-spacemacs:
 	mkdir -p $(TARGET)/.spacemacs.d
