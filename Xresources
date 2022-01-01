@@ -72,7 +72,7 @@ XTerm*faceSize:          11
 XTerm*reverseVideo:      on
 XTerm*selectToClipboard: true
 
-Xcursor.theme: xcursor-breeze
+Xcursor.theme: Chicago95_Cursor_Black
 Xcursor.size:                     0
 
 URxvt.font:     xft:Source Code Pro:size=15
