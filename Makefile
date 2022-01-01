@@ -3,7 +3,7 @@ TARGET ?= $(HOME)
 HERE := $(PWD)
 
 install: install-x install-i3 install-shell \
-	install-spacemacs install-tmux install-git install-moc \
+	install-spacemacs install-git install-moc \
 	install-pylint install-bin install-gtk
 
 install-x:
@@ -26,9 +26,6 @@ install-spacemacs:
 	mkdir -p $(TARGET)/.spacemacs.d
 	ln -sf $(HERE)/config/spacemacs/spacemacs $(TARGET)/.spacemacs
 	ln -sf $(HERE)/config/spacemacs/snippets $(TARGET)/.spacemacs.d/snippets
-
-install-tmux:
-	ln -sf $(HERE)/config/tmux/tmux.conf $(TARGET)/.tmux.conf
 
 install-git:
 	ln -sf $(HERE)/config/git/gitignore_global $(TARGET)/.gitignore_global
