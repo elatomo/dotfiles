@@ -63,7 +63,8 @@ This function should only modify configuration layer settings."
      ;; spell-checking
      syntax-checking
      ;; version-control
-     treemacs)
+     treemacs
+     emoji)
 
    ;; List of additional packages that will be installed without being wrapped
    ;; in a layer (generally the packages are installed only and should still be
@@ -636,6 +637,9 @@ before packages are loaded."
      (lisp .t)))
 
   (setq geiser-default-implementation 'racket)
+
+  ;; Global modes
+  (global-emojify-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
