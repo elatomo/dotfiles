@@ -23,9 +23,7 @@ install-shell:
 	ln -sf $(HERE)/inputrc $(TARGET)/.inputrc
 
 install-spacemacs:
-	mkdir -p $(TARGET)/.spacemacs.d
-	ln -sf $(HERE)/config/spacemacs/spacemacs $(TARGET)/.spacemacs
-	ln -sf $(HERE)/config/spacemacs/snippets $(TARGET)/.spacemacs.d/snippets
+	stow spacemacs -t $(TARGET)
 
 install-git:
 	ln -sf $(HERE)/config/git/gitignore_global $(TARGET)/.gitignore_global
