@@ -17,9 +17,8 @@ install-i3:
 	ln -sf $(HERE)/config/i3status/config $(TARGET)/.config/i3status/config
 
 install-shell:
+	stow bash -t $(TARGET)
 	ln -sf $(HERE)/profile $(TARGET)/.profile
-	ln -sf $(HERE)/bash_aliases $(TARGET)/.bash_aliases
-	ln -sf $(HERE)/bashrc $(TARGET)/.bashrc
 	ln -sf $(HERE)/inputrc $(TARGET)/.inputrc
 
 install-spacemacs:
