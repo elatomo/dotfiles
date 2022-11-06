@@ -35,8 +35,5 @@ install-pylint:
 	ln -sf $(HERE)/config/pylint/pylint.rc $(TARGET)/.pylint.rc
 
 install-gtk:
-	rm -f $(TARGET)/.gtkrc-2.0
-	ln -s $(HERE)/config/gtk-2.0/gtkrc-2.0 $(TARGET)/.gtkrc-2.0
-	mkdir -p $(TARGET)/.config/gtk-3.0
-	rm -f $(TARGET)/.config/gtk-3.0/settings.ini
-	ln -s $(HERE)/config/gtk-3.0/settings.ini $(TARGET)/.config/gtk-3.0/settings.ini
+	stow gtk2 -t $(TARGET)
+	stow gtk3 -t $(TARGET)
