@@ -11,8 +11,7 @@ install-x:
 	ln -sf $(HERE)/Xresources $(TARGET)/.Xresources
 
 install-i3:
-	mkdir -p $(TARGET)/.config/i3
-	ln -sf $(HERE)/config/i3/config $(TARGET)/.config/i3/config
+	stow i3 -t $(TARGET)
 	mkdir -p $(TARGET)/.config/i3status
 	ln -sf $(HERE)/config/i3status/config $(TARGET)/.config/i3status/config
 
