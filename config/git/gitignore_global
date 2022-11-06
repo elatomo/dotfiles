@@ -3,3 +3,4 @@
 TODO.md
 .ropeproject
 .pytest_cache
+*.~undo-tree~
