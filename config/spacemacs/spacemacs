@@ -46,23 +46,21 @@ This function should only modify configuration layer settings."
              python-test-runner 'pytest)
      (typescript :variables
                  typescript-indent-level 2)
+     rust
      git
      helm
-     ;; lsp
      markdown
      yaml
      html
-     ansible
-     multiple-cursors
+     docker
      (org :variables
           org-want-todo-bindings t)
      (shell :variables
             shell-default-shell 'vterm
             shell-default-height 30
             shell-default-position 'bottom)
-     ;; spell-checking
+     spell-checking
      syntax-checking
-     ;; version-control
      treemacs
      emoji)
 
