@@ -17,6 +17,7 @@ install-i3:
 
 install-shell:
 	stow bash -t $(TARGET)
+	stow alacritty -t $(TARGET)
 	ln -sf $(HERE)/profile $(TARGET)/.profile
 	ln -sf $(HERE)/inputrc $(TARGET)/.inputrc
 
