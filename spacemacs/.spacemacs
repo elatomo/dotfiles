@@ -43,7 +43,8 @@ This function should only modify configuration layer settings."
      emacs-lisp
      common-lisp
      (python :variables
-             python-test-runner 'pytest)
+             python-test-runner 'pytest
+             python-formatter 'black)
      (typescript :variables
                  typescript-indent-level 2)
      rust
