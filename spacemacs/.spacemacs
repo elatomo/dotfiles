@@ -60,7 +60,7 @@ This function should only modify configuration layer settings."
             shell-default-shell 'vterm
             shell-default-height 30
             shell-default-position 'bottom)
-     spell-checking
+     ;; spell-checking
      syntax-checking
      treemacs
      emoji)
