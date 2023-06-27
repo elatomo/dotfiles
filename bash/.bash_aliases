@@ -16,6 +16,7 @@ alias free='free -m'                      # show sizes in MB
 
 ## tools
 alias rgg='rg --context=3'
+alias rghidden='rg --hidden --no-ignore'
 
 function rgorg() {
     rg "$@" ~/org
