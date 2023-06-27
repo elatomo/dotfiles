@@ -99,3 +99,8 @@ if [ -f "$HOME/bin/google-cloud-sdk/path.bash.inc" ]; then source "$HOME/bin/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/bin/google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/bin/google-cloud-sdk/completion.bash.inc"; fi
+
+# aws-vault default backend
+export AWS_VAULT_BACKEND=pass
+# See https://github.com/99designs/aws-vault/issues/686
+export GPG_TTY=$(tty)
