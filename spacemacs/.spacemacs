@@ -41,13 +41,13 @@ This function should only modify configuration layer settings."
      auto-completion
      better-defaults
      emacs-lisp
-     common-lisp
+     (elixir :variables
+             elixir-backend 'alchemist)
      (python :variables
              python-test-runner 'pytest
              python-formatter 'black)
      (typescript :variables
                  typescript-indent-level 2)
-     rust
      git
      helm
      markdown
@@ -63,7 +63,8 @@ This function should only modify configuration layer settings."
      ;; spell-checking
      syntax-checking
      treemacs
-     emoji)
+     emoji
+     rust)
 
    ;; List of additional packages that will be installed without being wrapped
    ;; in a layer (generally the packages are installed only and should still be
@@ -77,7 +78,8 @@ This function should only modify configuration layer settings."
    '(
      ob-typescript
      helm-org
-     elpher)
+     elpher
+     sqlite3)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -649,16 +651,14 @@ before packages are loaded."
     )
   (setq org-export-backends (quote (ascii html icalendar latex md odt)))
 
-  ;; org: babel and python
+  ;; org: babel
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
      (shell . t)
-     (scheme . t)
-     (clojure . t)
+     (elixir . t)
      (plantuml .t)
      (gnuplot .t)
-     (typescript .t)
      (lisp .t)))
 
   (setq geiser-default-implementation 'racket)
