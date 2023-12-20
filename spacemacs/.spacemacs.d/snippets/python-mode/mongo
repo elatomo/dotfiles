@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: sm mongo
-# key: m
-# --
-from pymongo import MongoClient
-from bson import ObjectId
-
-client = MongoClient('fred.local')
-$1
