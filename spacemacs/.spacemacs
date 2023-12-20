@@ -49,7 +49,6 @@ This function should only modify configuration layer settings."
      (typescript :variables
                  typescript-indent-level 2)
      git
-     helm
      markdown
      yaml
      html
@@ -63,8 +62,7 @@ This function should only modify configuration layer settings."
      ;; spell-checking
      syntax-checking
      treemacs
-     emoji
-     rust)
+     emoji)
 
    ;; List of additional packages that will be installed without being wrapped
    ;; in a layer (generally the packages are installed only and should still be
