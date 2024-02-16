@@ -612,7 +612,7 @@ before packages are loaded."
                 ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
 
   ;; org: agenda configuration
-  (setq org-agenda-files (list "~/org/home.org" "~/org/work.org"))
+  (setq org-agenda-files (list "~/org/home.org" "~/org/work.org" "~/org/notes.org"))
   (setq org-agenda-custom-commands
         '(
           ("n" todo "NEXT")
