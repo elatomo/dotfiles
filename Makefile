@@ -13,10 +13,9 @@ install-i3:
 	stow i3 -t $(TARGET)
 
 install-shell:
+	stow shell -t $(TARGET)
 	stow bash -t $(TARGET)
 	stow alacritty -t $(TARGET)
-	ln -sf $(HERE)/profile $(TARGET)/.profile
-	ln -sf $(HERE)/inputrc $(TARGET)/.inputrc
 
 install-spacemacs:
 	stow spacemacs -t $(TARGET)
