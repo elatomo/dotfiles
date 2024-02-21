@@ -11,8 +11,6 @@ install-x:
 
 install-i3:
 	stow i3 -t $(TARGET)
-	mkdir -p $(TARGET)/.config/i3status
-	ln -sf $(HERE)/config/i3status/config $(TARGET)/.config/i3status/config
 
 install-shell:
 	stow bash -t $(TARGET)
