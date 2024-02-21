@@ -4,7 +4,7 @@ HERE := $(PWD)
 
 install: install-x install-i3 install-shell \
 	install-spacemacs install-git install-moc \
-	install-pylint install-bin install-gtk
+	install-python install-bin install-gtk
 
 install-x:
 	stow x -t $(TARGET)
@@ -26,12 +26,13 @@ install-git:
 	git config --global core.excludesfile $(TARGET)/.gitignore_global
 
 install-moc:
+  # TODO: this one is broken
 	rm -f $(TARGET)/.moc
 	ln -s $(HERE)/config/moc $(TARGET)/.moc
-
-install-pylint:
-	ln -sf $(HERE)/config/pylint/pylint.rc $(TARGET)/.pylint.rc
 
 install-gtk:
 	stow gtk2 -t $(TARGET)
 	stow gtk3 -t $(TARGET)
+
+install-python:
+	stow python -t $(TARGET)

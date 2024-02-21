@@ -1,4 +1,1 @@
-config/vim/plugged
-config/spacemacs/spacemacs.elc
-config/vim/.netrwhist
-config/moc/playlist.m3u
+python/.ipython/profile_default/*
