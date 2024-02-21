@@ -7,8 +7,7 @@ install: install-x install-i3 install-shell \
 	install-pylint install-bin install-gtk
 
 install-x:
-	ln -sf $(HERE)/Xkbmap $(TARGET)/.Xkbmap
-	ln -sf $(HERE)/Xresources $(TARGET)/.Xresources
+	stow x -t $(TARGET)
 
 install-i3:
 	stow i3 -t $(TARGET)
