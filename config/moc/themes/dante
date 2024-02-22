@@ -19,7 +19,7 @@ selected_directory		= red		cyan		bold
 playlist				= green		default
 selected_playlist		= green		cyan		bold
 
-file					= white		default	
+file					= grey		default	
 selected_file			= yellow	cyan		bold
 
 marked_file				= green		default		bold
