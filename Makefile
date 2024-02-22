@@ -24,9 +24,7 @@ install-git:
 	stow git -t $(TARGET)
 
 install-moc:
-  # TODO: this one is broken
-	rm -f $(TARGET)/.moc
-	ln -s $(HERE)/config/moc $(TARGET)/.moc
+	stow moc -t $(TARGET)
 
 install-gtk:
 	stow gtk2 -t $(TARGET)
