@@ -21,8 +21,7 @@ install-spacemacs:
 	stow spacemacs -t $(TARGET)
 
 install-git:
-	ln -sf $(HERE)/config/git/gitignore_global $(TARGET)/.gitignore_global
-	git config --global core.excludesfile $(TARGET)/.gitignore_global
+	stow git -t $(TARGET)
 
 install-moc:
   # TODO: this one is broken
