@@ -2,3 +2,5 @@ equalizer
 last_directory
 softmixer
 pid
+playlist.m3u
+socket*
