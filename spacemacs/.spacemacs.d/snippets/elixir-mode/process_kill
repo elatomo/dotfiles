@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: process_kill
+# key: pk
+# --
+Process.exit(Process.whereis($1), :kill)
