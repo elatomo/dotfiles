@@ -1,18 +1,31 @@
 # Dotfiles
 
-My *dotfiles*: mainly vim, bash and x.
+My configuration files.
 
-## Install
+## Usage
 
-    git clone https://github.com/elatomo/dotfiles.git
-    cd dotfiles && make
+Pull the repository, and then create the symbolic links [using GNU
+stow](https://www.gnu.org/software/stow/):
 
-The default target is your home. You can always override it:
+```shell
+$ git clone git@github.com:elatomo/dotfiles.git
+$ cd dotfiles
+$ stow spacemacs git  # or whatever else you'd like
+```
 
-    TARGET=/tmp make
+## Dependencies
 
-
-
-
-
+- GTK theme:
+  [numix-solarized-gtk-theme](https://aur.archlinux.org/packages/gtk-theme-numix-solarized/)
+- Icons and xcursor:
+  [Chicago95](https://aur.archlinux.org/packages/xcursor-chicago95-git/)
+- Emojis in terminal:
+  [noto-fonts-emoji](https://archlinux.org/packages/extra/any/noto-fonts-emoji/)
+- Other tools:
+  - [libvterm](https://archlinux.org/packages/extra/x86_64/libvterm/) (to
+    support Emacs vterm)
+  - [ripgrep](https://github.com/BurntSushi/ripgrep)
+  - [LightDM](https://wiki.archlinux.org/title/LightDM), which will configure
+    Xorg keyboard with [.Xkbmap](./x/.Xkbmap)
+  - [bash-completion](https://github.com/scop/bash-completion)
 
