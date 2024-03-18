@@ -1,34 +1,49 @@
 SHELL := /usr/bin/env bash
 TARGET ?= $(HOME)
-HERE := $(PWD)
 
-install: install-x install-i3 install-shell \
-	install-spacemacs install-git install-moc \
-	install-python install-bin install-gtk
+.PHONY: help
+help:  ## Show help
+	@grep -E '^[0-9a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+.PHONY: all
+all: install-x install-i3 install-shell install-spacemacs \
+  install-git install-moc install-python install-gtk
+
+# TODO: install-bin doesn't exist
+.PHONY: install
+install: all  ## Install all configuration files
+
+.PHONY: install-x
 install-x:
 	stow x -t $(TARGET)
 
-install-i3:
+.PHONY: install-i3
+install-i3:  ## Install I3 configuration
 	stow i3 -t $(TARGET)
 
-install-shell:
+.PHONY: install-shell
+install-shell:  ## Install Shell, Bash and Alacritty configuration
 	stow shell -t $(TARGET)
 	stow bash -t $(TARGET)
 	stow alacritty -t $(TARGET)
 
-install-spacemacs:
+.PHONY: install-spacemacs
+install-spacemacs:  ## Install Spacemacs configuration
 	stow spacemacs -t $(TARGET)
 
-install-git:
+.PHONY: install-git
+install-git:  ## Install Git configuration
 	stow git -t $(TARGET)
 
-install-moc:
+.PHONY: install-moc
+install-moc:  ## Install Music On Console configuration
 	stow moc -t $(TARGET)
 
-install-gtk:
+.PHONY: install-gtk
+install-gtk:  ## Install GTK configuration
 	stow gtk2 -t $(TARGET)
 	stow gtk3 -t $(TARGET)
 
-install-python:
+.PHONY: install-python
+install-python:  ## Install Python configuration
 	stow python -t $(TARGET)
