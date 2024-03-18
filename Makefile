@@ -7,14 +7,13 @@ help:  ## Show help
 
 .PHONY: all
 all: install-x install-i3 install-shell install-spacemacs \
-  install-git install-moc install-python install-gtk
+  install-git install-moc install-gtk install-python
 
-# TODO: install-bin doesn't exist
 .PHONY: install
 install: all  ## Install all configuration files
 
 .PHONY: install-x
-install-x:
+install-x:  ## Install Xresources and LightDM's Xkbmap
 	stow x -t $(TARGET)
 
 .PHONY: install-i3
