@@ -29,9 +29,8 @@ function rglog() {
 alias wgetpage='wget -p -k'
 
 function wgetmp3() {
-    workon -n music
-    youtube-dl -o "%(autonumber)s-%(title)s-%(id)s.%(ext)s" -x --audio-quality 0 --audio-format mp3 "$@" -i
-    deactivate
+    # yt-dlp is installed using pipx
+    yt-dlp -o "%(autonumber)s-%(title)s-%(id)s.%(ext)s" -x --audio-quality 0 --audio-format mp3 "$@" -i
 }
 
 alias xclipcopy='xclip -selection clipboard'
