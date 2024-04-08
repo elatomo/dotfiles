@@ -46,6 +46,7 @@ This function should only modify configuration layer settings."
      (python :variables
              python-test-runner 'pytest
              python-formatter 'black)
+     javascript
      (typescript :variables
                  typescript-indent-level 2)
      git
@@ -75,6 +76,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages
    '(
      ob-typescript
+     ob-js
      helm-org
      elpher
      sqlite3)
@@ -657,7 +659,8 @@ before packages are loaded."
      (elixir . t)
      (plantuml .t)
      (gnuplot .t)
-     (lisp .t)))
+     (lisp .t)
+     (js .t)))
 
   (setq geiser-default-implementation 'racket)
 
