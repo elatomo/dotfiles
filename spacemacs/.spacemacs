@@ -662,8 +662,6 @@ before packages are loaded."
      (lisp .t)
      (js .t)))
 
-  (setq geiser-default-implementation 'racket)
-
   ;; Global modes
   (global-emojify-mode)
 )
