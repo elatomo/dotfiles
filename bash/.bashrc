@@ -99,3 +99,6 @@ if [ -f "$HOME/bin/google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/b
 export AWS_VAULT_BACKEND=pass
 # See https://github.com/99designs/aws-vault/issues/686
 export GPG_TTY=$(tty)
+
+# install asdf
+. /opt/asdf-vm/asdf.sh

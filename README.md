@@ -28,4 +28,5 @@ $ stow spacemacs git  # or whatever else you'd like
   - [LightDM](https://wiki.archlinux.org/title/LightDM), which will configure
     Xorg keyboard with [.Xkbmap](./x/.Xkbmap)
   - [bash-completion](https://github.com/scop/bash-completion)
+  - [asdf](https://asdf-vm.com/)
 
