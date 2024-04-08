@@ -46,7 +46,8 @@ This function should only modify configuration layer settings."
      (python :variables
              python-test-runner 'pytest
              python-formatter 'black)
-     javascript
+     (javascript :variables
+                 js2-mode-show-strict-warnings nil)
      (typescript :variables
                  typescript-indent-level 2)
      git
