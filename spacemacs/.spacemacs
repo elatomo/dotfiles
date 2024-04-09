@@ -50,7 +50,8 @@ This function should only modify configuration layer settings."
                  js2-mode-show-strict-warnings nil
                  javascript-fmt-tool 'prettier
                  javascript-fmt-on-save t
-                 js-indent-level 2)
+                 js-indent-level 2
+                 javascript-repl 'nodejs)
      (typescript :variables
                  typescript-indent-level 2)
      git
