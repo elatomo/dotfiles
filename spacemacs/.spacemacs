@@ -49,7 +49,8 @@ This function should only modify configuration layer settings."
      (javascript :variables
                  js2-mode-show-strict-warnings nil
                  javascript-fmt-tool 'prettier
-                 javascript-fmt-on-save t)
+                 javascript-fmt-on-save t
+                 js-indent-level 2)
      (typescript :variables
                  typescript-indent-level 2)
      git
