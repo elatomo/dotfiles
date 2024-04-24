@@ -41,6 +41,7 @@ This function should only modify configuration layer settings."
      auto-completion
      better-defaults
      emacs-lisp
+     lsp
      (elixir :variables
              elixir-backend 'alchemist)
      (python :variables
@@ -53,7 +54,9 @@ This function should only modify configuration layer settings."
                  js-indent-level 2
                  javascript-repl 'nodejs)
      (typescript :variables
-                 typescript-indent-level 2)
+                 typescript-linter 'eslint
+                 typescript-fmt-tool 'prettier
+                 typescript-backend 'lsp)
      git
      markdown
      yaml
