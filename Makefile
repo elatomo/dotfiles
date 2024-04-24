@@ -7,7 +7,7 @@ help:  ## Show help
 
 .PHONY: all
 all: install-x install-i3 install-shell install-spacemacs \
-  install-git install-moc install-gtk install-python
+  install-git install-moc install-gtk install-python install-asdf
 
 .PHONY: install
 install: all  ## Install all configuration files
@@ -46,3 +46,7 @@ install-gtk:  ## Install GTK configuration
 .PHONY: install-python
 install-python:  ## Install Python configuration
 	stow python -t $(TARGET)
+
+.PHONY: install-asdf
+install-asdf:  ## Install asdf configuration
+	stow asdf -t $(TARGET)
