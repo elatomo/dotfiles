@@ -49,6 +49,8 @@ alias http='python3 -m http.server'
 
 alias git-graph="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
+alias pn=pnpm
+
 ## system
 alias backup='rsync -avz'
 alias sbackup='backup -e ssh'
