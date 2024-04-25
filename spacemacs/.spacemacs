@@ -56,7 +56,8 @@ This function should only modify configuration layer settings."
      (typescript :variables
                  typescript-linter 'eslint
                  typescript-fmt-tool 'prettier
-                 typescript-backend 'lsp)
+                 typescript-backend 'lsp
+                 typescript-indent-level 2)
      git
      markdown
      yaml
