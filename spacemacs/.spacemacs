@@ -601,8 +601,6 @@ before packages are loaded."
   (spacemacs/set-leader-keys
     "oc" 'org-capture)
 
-  (setq clojure-enable-fancify-symbols t)
-
   ;; default browser
   (setq-default browse-url-browser-function 'browse-url-firefox)
 
