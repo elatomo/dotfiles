@@ -604,11 +604,10 @@ before packages are loaded."
   ;; default browser
   (setq-default browse-url-browser-function 'browse-url-firefox)
 
-  (custom-set-variables
-   '(org-plantuml-jar-path "~/bin/plantuml.jar"))
-
   ;; -- ORG CONFIGURATION --
   ;; plenty of inspiration from https://github.com/oelu/dotfiles/blob/master/spacemacs
+
+  (setq org-plantuml-exec-mode 'plantuml)
 
   ;; org: task states configuration
   (setq org-todo-keywords
