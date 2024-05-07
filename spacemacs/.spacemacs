@@ -47,6 +47,11 @@ This function should only modify configuration layer settings."
      (python :variables
              python-test-runner 'pytest
              python-formatter 'black)
+     (html :variables
+           web-mode-markup-indent-offset 2
+           web-mode-code-indent-offset 2
+           web-mode-css-indent-offset 2
+           web-mode-sql-indent-offset 2)
      (javascript :variables
                  js2-mode-show-strict-warnings nil
                  javascript-fmt-tool 'prettier
