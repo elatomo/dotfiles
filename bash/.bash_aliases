@@ -33,6 +33,11 @@ function wgetmp3() {
     yt-dlp -o "%(autonumber)s-%(title)s-%(id)s.%(ext)s" -x --audio-quality 0 --audio-format mp3 "$@" -i
 }
 
+function wgetaudio() {
+    # yt-dlp is installed using pipx
+    yt-dlp -o "%(autonumber)s-%(title)s-%(id)s.%(ext)s" -x --audio-quality 0 --audio-format best "$@" -i
+}
+
 alias xclipcopy='xclip -selection clipboard'
 alias xclippaste='xclip -o -selection clipboard'
 
