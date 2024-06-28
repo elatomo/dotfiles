@@ -68,6 +68,7 @@ This function should only modify configuration layer settings."
      markdown
      yaml
      html
+     sql
      docker
      (org :variables
           org-want-todo-bindings t)
