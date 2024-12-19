@@ -68,7 +68,8 @@ This function should only modify configuration layer settings."
      markdown
      yaml
      html
-     sql
+     (sql :variables
+          sqlind-basic-offset 4)
      docker
      (org :variables
           org-want-todo-bindings t)
