@@ -1,3 +1,5 @@
 [user]
     name = José Fernández Ramos
     email = jframos@fastmail.com
+[init]
+	defaultBranch = main
