@@ -681,6 +681,9 @@ before packages are loaded."
 
   ;; Global modes
   (global-emojify-mode)
+
+  ;; Enable visual-line-mode automatically when entering gptel-mode
+  (add-hook 'gptel-mode-hook 'visual-line-mode)
   )
 
 
