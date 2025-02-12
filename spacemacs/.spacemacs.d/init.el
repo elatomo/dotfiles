@@ -81,7 +81,10 @@ This function should only modify configuration layer settings."
      syntax-checking
      treemacs
      emoji
-     llm-client)
+     (llm-client :variables
+                 gptel-default-mode 'org-mode
+                 gptel-model "gpt-4o-mini")
+     )
 
    ;; List of additional packages that will be installed without being wrapped
    ;; in a layer (generally the packages are installed only and should still be
