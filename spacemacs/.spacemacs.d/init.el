@@ -575,7 +575,7 @@ default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
   (spacemacs/load-spacemacs-env)
-)
+  )
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -583,7 +583,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-)
+  )
 
 
 (defun dotspacemacs/user-load ()
@@ -591,7 +591,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump."
-)
+  )
 
 
 (defun dotspacemacs/user-config ()
@@ -659,9 +659,9 @@ before packages are loaded."
   (with-eval-after-load 'org
     (require 'ox-confluence)
     (org-export-define-derived-backend 'jira 'confluence
-                                       :menu-entry
-                                       '(?j "Export to JIRA"
-                                            ((?j "As JIRA buffer" org-confluence-export-as-confluence))))
+      :menu-entry
+      '(?j "Export to JIRA"
+           ((?j "As JIRA buffer" org-confluence-export-as-confluence))))
     )
   (setq org-export-backends (quote (ascii html icalendar latex md odt)))
 
@@ -678,7 +678,7 @@ before packages are loaded."
 
   ;; Global modes
   (global-emojify-mode)
-)
+  )
 
 
 ;; Do not write anything past this comment. This is where Emacs will
