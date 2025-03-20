@@ -686,6 +686,9 @@ before packages are loaded."
 
   ;; Enable visual-line-mode automatically when entering gptel-mode
   (add-hook 'gptel-mode-hook 'visual-line-mode)
+
+  ;; Enable Anthropic / Claude in gptel
+  (gptel-make-anthropic "Claude" :stream t :key gptel-api-key)
   )
 
 
