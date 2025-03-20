@@ -45,8 +45,6 @@ alias xclippaste='xclip -o -selection clipboard'
 alias todo='cat TODO.* 2>/dev/null;ag "TODO|todo::"'
 alias fixme='ag "FIXME"'
 
-alias mkvirtualenv310='mkvirtualenv -p /usr/bin/python3.10 -a .'
-alias mkvirtualenv311='mkvirtualenv -p /usr/bin/python3.11 -a .'
 alias mkvirtualenv312='mkvirtualenv -p /usr/bin/python3.12 -a .'
 alias mkvirtualenv313='mkvirtualenv -p /usr/bin/python3.13 -a .'
 alias mkvirtualenv='mkvirtualenv -a .'
