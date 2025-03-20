@@ -82,7 +82,9 @@ This function should only modify configuration layer settings."
      treemacs
      emoji
      (llm-client :variables
+                 llm-client-enable-gptel t
                  gptel-default-mode 'org-mode
+                 gptel-api-key 'gptel-api-key-from-auth-source
                  gptel-model "gpt-4o-mini")
      )
 
