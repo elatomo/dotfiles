@@ -85,7 +85,7 @@ This function should only modify configuration layer settings."
                  llm-client-enable-gptel t
                  gptel-default-mode 'org-mode
                  gptel-api-key 'gptel-api-key-from-auth-source
-                 gptel-model "gpt-4o-mini")
+                 gptel-model "gpt-4.1-mini")
      )
 
    ;; List of additional packages that will be installed without being wrapped
