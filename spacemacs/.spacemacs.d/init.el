@@ -606,83 +606,293 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
-  (spacemacs/set-leader-keys
-    "oc" 'org-capture)
+  ;;; ==========================================
+  ;;; General configuration
+  ;;; ==========================================
 
-  ;; default browser
+  ;; Set default browser
   (setq-default browse-url-browser-function 'browse-url-firefox)
 
-  ;; -- ORG CONFIGURATION --
-  ;; plenty of inspiration from https://github.com/oelu/dotfiles/blob/master/spacemacs
+  ;; Enable global modes
+  (global-emojify-mode)
 
+  ;;; ==========================================
+  ;;; Org-mode configuration
+  ;;; ==========================================
+
+  ;; Basic org settings
   (setq org-plantuml-exec-mode 'plantuml)
 
-  ;; org: task states configuration
+  ;; Task states and workflow
   (setq org-todo-keywords
-        (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
-                (sequence "WAITING(w)" "HOLD(h)" "|" "CANCELLED(c)"))))
+        '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)")
+          (sequence "WAITING(w)" "HOLD(h)" "|" "CANCELLED(c)")))
 
-  ;; org: automatically add tags when state changes occur
+  ;; Automatic tag handling when state changes
   (setq org-todo-state-tags-triggers
-        (quote (("CANCELLED" ("CANCELLED" . t))
-                ("WAITING" ("WAITING" . t))
-                ("HOLD" ("WAITING") ("HOLD" . t))
-                (done ("WAITING") ("HOLD"))
-                ("TODO" ("WAITING") ("CANCELLED") ("HOLD"))
-                ("NEXT" ("WAITING") ("CANCELLED") ("HOLD"))
-                ("DONE" ("WAITING") ("CANCELLED") ("HOLD")))))
-
-  ;; org: agenda configuration
-  (setq org-agenda-files (list "~/org/home.org" "~/org/work.org" "~/org/notes.org"))
-  (setq org-agenda-custom-commands
         '(
-          ("n" todo "NEXT")
-          ("w" todo "WAITING")
-          ("d" "Agenda + Next Actions" ((agenda) (todo "NEXT")))
-          )
-        )
+          ;; Terminal states
+          ("CANCELLED" ("CANCELLED" . t) ("@waiting") ("@hold"))
+          ;; Action contexts
+          ("WAITING" ("@waiting" . t) ("CANCELLED") ("@hold"))
+          ("HOLD" ("@hold" . t) ("CANCELLED") ("@waiting"))
+          ;; Active states
+          ("DONE" ("@waiting") ("@hold") ("CANCELLED"))
+          ("TODO" ("@waiting") ("@hold") ("CANCELLED"))
+          ("NEXT" ("@waiting") ("@hold") ("CANCELLED"))))
 
-  ;; org: capture
-  (setq org-capture-templates
-        '(
-          ;; file+olp specifies to full path to fill the Template
-          ("w" "Work" entry (file+olp "~/org/work.org" "Tasks")
-           "* TODO %? \n:PROPERTIES:\n:CREATED: %U\n:END:")
-          ("h" "Home" entry (file+olp "~/org/home.org" "Tasks")
-           "* TODO %? \n:PROPERTIES:\n:CREATED: %U\n:END:")
-          ))
+  ;; Agenda files configuration
+  (setq org-agenda-files '("~/org/inbox.org"
+                           "~/org/work.org"
+                           "~/org/home.org"))
 
-  ;; org: refile
+  ;; Archive configuration
+  (setq org-archive-location "~/org/archive/%s_archive::")
+
+  ;; Auto-save org files when agenda commands are run
+  (advice-add 'org-agenda-quit :before 'org-save-all-org-buffers)
+  (advice-add 'org-agenda-exit :before 'org-save-all-org-buffers)
+
+  ;; Refile configuration
   (setq org-refile-use-outline-path t)
+  (setq org-outline-path-complete-in-steps nil) ;; Allow completion in a single step
   (setq org-refile-targets
-        '(
-          (org-agenda-files :level . 1)
-          ("~/org/maybe.org" :level . 1)
-          ))
+        '((org-agenda-files :maxlevel . 3)
+          ("~/org/archive/work_archive.org" :level . 1)
+          ("~/org/archive/home_archive.org" :level . 1)))
 
-  ;; org: custom export backends
-  (with-eval-after-load 'org
-    (require 'ox-confluence)
-    (org-export-define-derived-backend 'jira 'confluence
-      :menu-entry
-      '(?j "Export to JIRA"
-           ((?j "As JIRA buffer" org-confluence-export-as-confluence))))
-    )
-  (setq org-export-backends (quote (ascii html icalendar latex md odt)))
+  ;; Time tracking configuration
+  (setq org-clock-persist 'history)
+  (org-clock-persistence-insinuate)
+  (setq org-clock-into-drawer t)
+  (setq org-clock-out-remove-zero-time-clocks t)
 
-  ;; org: babel
+  ;; Export backends configuration
+  (setq org-export-backends '(ascii html icalendar latex md odt))
+
+  ;; Babel languages support
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((python . t)
      (shell . t)
      (elixir . t)
-     (plantuml .t)
-     (gnuplot .t)
-     (lisp .t)
-     (js .t)))
+     (plantuml . t)
+     (gnuplot . t)
+     (lisp . t)
+     (js . t)))
 
-  ;; Global modes
-  (global-emojify-mode)
+  ;;; ==========================================
+  ;;; Tag system configuration
+  ;;; ==========================================
+
+  ;; Configure tags for work/home separation and contexts
+  (setq org-tag-alist '((:startgroup . nil)
+                        ("work" . ?w) ("home" . ?h)
+                        (:endgroup . nil)
+                        ("@computer" . ?c) ("@phone" . ?p) ("@office" . ?o)
+                        ("@errands" . ?e) ("@waiting" . ?a)
+                        ("quick" . ?q) ("focus" . ?f) ("lowenergy" . ?l)
+                        ;; Specific areas
+                        ("agency" . ?A) ("autonomo" . ?u)
+                        ("familia" . ?F) ("música" . ?m) ("filosofía" . ?i)
+                        ("finance" . ?$) ("admin" . ?d)))
+
+  ;;; ==========================================
+  ;;; Capture templates
+  ;;; ==========================================
+
+  (setq org-capture-templates
+        '(("t" "Todo" entry (file+headline "~/org/inbox.org" "Tareas e Ideas")
+           "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
+          ("w" "Work task" entry (file+headline "~/org/inbox.org" "Tareas e Ideas")
+           "* TODO %? :work:\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
+          ("h" "Home task" entry (file+headline "~/org/inbox.org" "Tareas e Ideas")
+           "* TODO %? :home:\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
+          ("n" "Note" entry (file+headline "~/org/inbox.org" "Tareas e Ideas")
+           "* %? :note:\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
+          ("r" "Recipe" entry (file+headline "~/org/recetas.org" "Por Probar")
+           "*** %^{Nombre de la receta}\n:PROPERTIES:\n:ORIGEN: %^{Origen}\n:LINK: %^{URL|N/A}\n:END:\n\n%?")))
+
+  ;;; ==========================================
+  ;;; Custom functions
+  ;;; ==========================================
+
+  (defun my/process-org-inbox ()
+    "Process the org inbox."
+    (interactive)
+    (find-file "~/org/inbox.org")
+    (goto-char (point-min)))
+
+  (defun my/org-jump-to-project ()
+    "Jump to a project in your org files."
+    (interactive)
+    (let ((completing-read-function #'ivy-completing-read))
+      (org-refile-goto-target
+       (org-refile-get-location "Project: " nil t t))))
+
+  (defun my/toggle-work-view ()
+    "Toggle between showing only work tasks or all tasks."
+    (interactive)
+    (if (string= org-agenda-tag-filter "+work")
+        (org-agenda-filter-by-tag nil)
+      (org-agenda-filter-by-tag '("+work"))))
+
+  (defun my/toggle-home-view ()
+    "Toggle between showing only home tasks or all tasks."
+    (interactive)
+    (if (string= org-agenda-tag-filter "+home")
+        (org-agenda-filter-by-tag nil)
+      (org-agenda-filter-by-tag '("+home"))))
+
+  (defun my/org-search-tags ()
+    "Search for specific tags combination."
+    (interactive)
+    (let* ((tags (split-string
+                  (completing-read "Tags (separated by space): " nil) " "))
+           (tag-query (mapconcat (lambda (tag)
+                                   (if (string-prefix-p "-" tag) tag
+                                     (concat "+" tag)))
+                                 tags "+")))
+      (org-tags-view nil tag-query)))
+
+  (defun my/org-find-stuck-projects ()
+    "Find projects without any NEXT tasks."
+    (interactive)
+    (org-agenda nil "s")  ;; "s" is the standard view for "stuck projects"
+    (org-agenda-redo))
+
+  ;;; ==========================================
+  ;;; Keyboard shortcuts
+  ;;; ==========================================
+
+  (spacemacs/set-leader-keys
+    ;; Core org functions
+    "oc" 'org-capture
+    "oa" 'org-agenda
+
+    ;; Custom workflow functions
+    "oi" 'my/process-org-inbox
+    "op" 'my/org-jump-to-project
+    "ow" 'my/toggle-work-view
+    "oh" 'my/toggle-home-view
+    "os" 'my/org-search-tags
+    "ox" 'my/org-find-stuck-projects
+
+    ;; Additional useful functions
+    "or" 'org-refile
+    "ot" 'org-todo
+    "ol" 'org-store-link
+    "oT" 'org-clock-in-last)
+
+  ;;; ==========================================
+  ;;; Agenda custom views
+  ;;; ==========================================
+
+  (setq org-agenda-custom-commands
+        '(
+          ;; Daily view with separate blocks
+          ("d" "Daily view"
+           ((agenda "" ((org-agenda-span 1)
+                        (org-agenda-use-time-grid t)
+                        (org-agenda-prefix-format "  %-12:c%?-12t% s")
+                        (org-agenda-sorting-strategy '(time-up priority-down))
+                        (org-deadline-warning-days 14)))
+            (tags-todo "+work+PRIORITY=\"A\""
+                       ((org-agenda-overriding-header "Work - Priority")))
+            (tags-todo "+work-PRIORITY=\"A\""
+                       ((org-agenda-overriding-header "Work - Regular")))
+            (tags-todo "+home+PRIORITY=\"A\""
+                       ((org-agenda-overriding-header "Personal - Priority")))
+            (tags-todo "+home-PRIORITY=\"A\""
+                       ((org-agenda-overriding-header "Personal - Regular")))
+            (tags "CLOSED>=\"<-1d>\""
+                  ((org-agenda-overriding-header "Recently completed")))))
+
+          ;; Weekly view
+          ("w" "Weekly view"
+           agenda ""
+           ((org-agenda-span 7)
+            (org-agenda-start-on-weekday 1) ;; Start on Monday
+            (org-agenda-prefix-format "  %i %-12:c%?-12t% s")
+            (org-agenda-sorting-strategy '(time-up priority-down category-up))))
+
+          ;; Contexts (c-*)
+          ("c" . "Contexts")
+          ("cc" "Computer" tags-todo "@computer"
+           ((org-agenda-overriding-header "Tasks to do at computer")))
+          ("cp" "Phone" tags-todo "@phone"
+           ((org-agenda-overriding-header "Tasks to do on phone")))
+          ("co" "Office" tags-todo "@office"
+           ((org-agenda-overriding-header "Tasks to do at office")))
+          ("ch" "Home" tags-todo "@home"
+           ((org-agenda-overriding-header "Tasks to do at home")))
+          ("cw" "Waiting" tags-todo "@waiting"
+           ((org-agenda-overriding-header "Waiting for response")))
+
+          ;; Energy levels (e-*)
+          ("e" . "Energy")
+          ("eq" "Quick tasks" tags-todo "quick"
+           ((org-agenda-overriding-header "Tasks under 15 minutes")))
+          ("ef" "Focus" tags-todo "focus"
+           ((org-agenda-overriding-header "Tasks requiring concentration")))
+          ("el" "Low energy" tags-todo "lowenergy"
+           ((org-agenda-overriding-header "Tasks for low energy moments")))
+
+          ;; Current projects (p-*)
+          ("p" . "Projects")
+          ("pw" "Work projects"
+           ((tags-todo "work+project-ecommerce"
+                       ((org-agenda-overriding-header "E-commerce Project")))
+            (tags-todo "work+client-newcorp"
+                       ((org-agenda-overriding-header "NewCorp Client")))
+            (tags-todo "work+admin"
+                       ((org-agenda-overriding-header "Administrative Tasks")))
+            (tags-todo "work+meeting"
+                       ((org-agenda-overriding-header "Scheduled Meetings")))))
+
+          ("ph" "Personal projects"
+           ((tags-todo "home+familia"
+                       ((org-agenda-overriding-header "Family")))
+            (tags-todo "home+música"
+                       ((org-agenda-overriding-header "Music")))
+            (tags-todo "home+filosofía"
+                       ((org-agenda-overriding-header "Philosophy")))
+            (tags-todo "home+finanzas"
+                       ((org-agenda-overriding-header "Finances")))))
+
+          ;; Review (r-*)
+          ("r" . "Review")
+          ("rd" "Daily review"
+           ((agenda "" ((org-agenda-span 1)
+                        (org-agenda-start-day "+0d")))
+            (tags "CLOSED>=\"<today>\""
+                  ((org-agenda-overriding-header "Completed today")))
+            (todo "WAITING"
+                  ((org-agenda-overriding-header "Waiting")))
+            (tags-todo "DEADLINE<=\"<+3d>\"|SCHEDULED<=\"<+3d>\""
+                       ((org-agenda-overriding-header "Next 3 days")))))
+
+          ("rw" "Weekly review"
+           ((agenda "" ((org-agenda-span 7)
+                        (org-agenda-start-day "-6d")))
+            (tags "CLOSED>=\"<-7d>\""
+                  ((org-agenda-overriding-header "Completed this week")))
+            (todo "WAITING"
+                  ((org-agenda-overriding-header "Waiting")))
+            (tags-todo "DEADLINE<=\"<+14d>\"|SCHEDULED<=\"<+14d>\""
+                       ((org-agenda-overriding-header "Next 2 weeks")))))
+
+          ;; Standard built-in views worth keeping
+          ("n" . "Next actions and priorities")
+          ("na" "All next actions" todo "NEXT" nil)
+          ("nw" "Work next actions" tags-todo "work+NEXT" nil)
+          ("nh" "Home next actions" tags-todo "home+NEXT" nil)
+          ("s" "Stuck projects" stuck "" nil)
+          ))
+
+  ;;; ==========================================
+  ;;; LLM client configuration
+  ;;; ==========================================
 
   ;; Enable visual-line-mode automatically when entering gptel-mode
   (add-hook 'gptel-mode-hook 'visual-line-mode)
@@ -690,7 +900,6 @@ before packages are loaded."
   ;; Enable Anthropic / Claude in gptel
   (gptel-make-anthropic "Claude" :stream t :key gptel-api-key)
   )
-
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
