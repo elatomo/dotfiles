@@ -89,12 +89,6 @@ VIRTUALENVWRAPPER=`command -v virtualenvwrapper.sh`
 export WORKON_HOME=$HOME/.virtualenvs
 source $VIRTUALENVWRAPPER
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/bin/google-cloud-sdk/path.bash.inc" ]; then source "$HOME/bin/google-cloud-sdk/path.bash.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/bin/google-cloud-sdk/completion.bash.inc" ]; then source "$HOME/bin/google-cloud-sdk/completion.bash.inc"; fi
-
 # aws-vault default backend
 export AWS_VAULT_BACKEND=pass
 # See https://github.com/99designs/aws-vault/issues/686
