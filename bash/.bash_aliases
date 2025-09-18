@@ -18,12 +18,8 @@ alias free='free -m'                      # show sizes in MB
 alias rgg='rg --context=3'
 alias rghidden='rg --hidden --no-ignore'
 
-function rgorg() {
-    rg "$@" ~/org
-}
-
-function rglog() {
-    rgg "$@" ~/org/log.wiki
+function rgnotas() {
+    rg "$@" ~/Notas
 }
 
 alias wgetpage='wget -p -k'

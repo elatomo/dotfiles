@@ -610,6 +610,8 @@ before packages are loaded."
   ;;; General configuration
   ;;; ==========================================
 
+  (setq org-directory "~/Notas")
+
   ;; Set default browser
   (setq-default browse-url-browser-function 'browse-url-firefox)
 
@@ -642,12 +644,12 @@ before packages are loaded."
           ("NEXT" ("@waiting") ("@hold") ("CANCELLED"))))
 
   ;; Agenda files configuration
-  (setq org-agenda-files '("~/org/inbox.org"
-                           "~/org/work.org"
-                           "~/org/home.org"))
+  (setq org-agenda-files '("inbox.org"
+                           "work.org"
+                           "home.org"))
 
   ;; Archive configuration
-  (setq org-archive-location "~/org/archive/%s_archive::")
+  (setq org-archive-location (expand-file-name "archive/%s_archive::" org-directory))
 
   ;; Auto-save org files when agenda commands are run
   (advice-add 'org-agenda-quit :before 'org-save-all-org-buffers)
@@ -656,10 +658,7 @@ before packages are loaded."
   ;; Refile configuration
   (setq org-refile-use-outline-path t)
   (setq org-outline-path-complete-in-steps nil) ;; Allow completion in a single step
-  (setq org-refile-targets
-        '((org-agenda-files :maxlevel . 3)
-          ("~/org/archive/work_archive.org" :level . 1)
-          ("~/org/archive/home_archive.org" :level . 1)))
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
 
   ;; Time tracking configuration
   (setq org-clock-persist 'history)
@@ -702,16 +701,19 @@ before packages are loaded."
   ;;; ==========================================
 
   (setq org-capture-templates
-        '(("t" "Todo" entry (file+headline "~/org/inbox.org" "Tareas e Ideas")
+        '(("t" "Todo" entry (file+headline "inbox.org" "Tareas e Ideas")
            "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
-          ("w" "Work task" entry (file+headline "~/org/inbox.org" "Tareas e Ideas")
+          ("w" "Work task" entry (file+headline "inbox.org" "Tareas e Ideas")
            "* TODO %? :work:\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
-          ("h" "Home task" entry (file+headline "~/org/inbox.org" "Tareas e Ideas")
+          ("h" "Home task" entry (file+headline "inbox.org" "Tareas e Ideas")
            "* TODO %? :home:\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
-          ("n" "Note" entry (file+headline "~/org/inbox.org" "Tareas e Ideas")
+          ("n" "Note" entry (file+headline "inbox.org" "Tareas e Ideas")
            "* %? :note:\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
-          ("r" "Recipe" entry (file+headline "~/org/recetas.org" "Por Probar")
-           "*** %^{Nombre de la receta}\n:PROPERTIES:\n:ORIGEN: %^{Origen}\n:LINK: %^{URL|N/A}\n:END:\n\n%?")))
+          ("r" "Recipe" entry (file+headline "recetas.org" "Por Probar")
+           "*** %^{Nombre de la receta}\n:PROPERTIES:\n:ORIGEN: %^{Origen}\n:LINK: %^{URL|N/A}\n:END:\n\n%?")
+          ("l" "Nuevo lugar para visitar" entry
+           (file+headline "lugares.org" "Destinos por Visitar")
+           "** %^{Nombre del lugar}\n:PROPERTIES:\n:REGIÓN: %^{Región}\n:TIPO: %^{Tipo|Naturaleza|Ciudad|Monumento|Museo|Otro}\n:END:\n- %?")))
 
   ;;; ==========================================
   ;;; Custom functions
@@ -720,7 +722,7 @@ before packages are loaded."
   (defun my/process-org-inbox ()
     "Process the org inbox."
     (interactive)
-    (find-file "~/org/inbox.org")
+    (find-file (expand-file-name "inbox.org" org-directory))
     (goto-char (point-min)))
 
   (defun my/org-jump-to-project ()
