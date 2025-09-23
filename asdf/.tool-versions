@@ -1,4 +1,4 @@
 nodejs 22.13.1
-elixir 1.16.2
+elixir 1.18.3-otp-27
 python system
 pnpm 9.3.0
