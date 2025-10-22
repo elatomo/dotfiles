@@ -87,6 +87,7 @@ This function should only modify configuration layer settings."
                  gptel-default-mode 'org-mode
                  gptel-api-key 'gptel-api-key-from-auth-source
                  gptel-model "gpt-4.1-mini")
+     toml
      )
 
    ;; List of additional packages that will be installed without being wrapped
