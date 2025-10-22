@@ -46,7 +46,8 @@ This function should only modify configuration layer settings."
              elixir-backend 'alchemist)
      (python :variables
              python-test-runner 'pytest
-             python-formatter 'black)
+             python-formatter 'ruff
+             python-enable-tools '(uv))
      (html :variables
            web-mode-markup-indent-offset 2
            web-mode-code-indent-offset 2
