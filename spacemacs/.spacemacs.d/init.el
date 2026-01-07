@@ -88,6 +88,7 @@ This function should only modify configuration layer settings."
                  gptel-api-key 'gptel-api-key-from-auth-source
                  gptel-model "gpt-4.1-mini")
      toml
+     janet
      csv
      )
 
