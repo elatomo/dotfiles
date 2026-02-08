@@ -30,3 +30,9 @@ $ stow spacemacs git  # or whatever else you'd like
   - [bash-completion](https://github.com/scop/bash-completion)
   - [asdf](https://asdf-vm.com/)
 
+## Attribution
+
+Spacemacs org-pomodoro sounds:
+- [Ding 2.wav](https://freesound.org/people/gkillhour/sounds/267331/) by
+  [gkillhour](https://freesound.org/people/gkillhour/) ([CC BY
+  4.0](https://creativecommons.org/licenses/by/4.0/))
