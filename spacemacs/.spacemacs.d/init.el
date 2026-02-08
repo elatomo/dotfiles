@@ -90,6 +90,7 @@ This function should only modify configuration layer settings."
      toml
      janet
      csv
+     php
      )
 
    ;; List of additional packages that will be installed without being wrapped
