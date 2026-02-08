@@ -688,7 +688,7 @@ before packages are loaded."
     (setq org-pomodoro-start-sound (concat sound-dir "ding.wav")
           org-pomodoro-finished-sound (concat sound-dir "ding.wav")
           org-pomodoro-short-break-sound (concat sound-dir "ding.wav")
-          org-pomodoro-long-break-sound (concat sound-dir "ding.wav")))
+          org-pomodoro-long-break-sound (concat sound-dir "ding-triple.wav")))
 
   ;;; ==========================================
   ;;; Tag system configuration
