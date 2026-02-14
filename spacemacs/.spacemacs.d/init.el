@@ -713,10 +713,6 @@ before packages are loaded."
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline "inbox.org" "Tareas e Ideas")
            "* TODO %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
-          ("w" "Work task" entry (file+headline "inbox.org" "Tareas e Ideas")
-           "* TODO %? :work:\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
-          ("h" "Home task" entry (file+headline "inbox.org" "Tareas e Ideas")
-           "* TODO %? :home:\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
           ("n" "Note" entry (file+headline "inbox.org" "Tareas e Ideas")
            "* %? :note:\n:PROPERTIES:\n:CREATED: %U\n:END:\n")
           ("r" "Recipe" entry (file+headline "recetas.org" "Por Probar")
