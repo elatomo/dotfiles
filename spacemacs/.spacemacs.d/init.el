@@ -86,7 +86,7 @@ This function should only modify configuration layer settings."
                  llm-client-enable-gptel t
                  gptel-default-mode 'org-mode
                  gptel-api-key 'gptel-api-key-from-auth-source
-                 gptel-model "gpt-4.1-mini")
+                 gptel-model "claude-sonnet-4-5-20250929")
      toml
      janet
      csv
