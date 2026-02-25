@@ -7,7 +7,7 @@ help:  ## Show help
 
 .PHONY: all
 all: install-x install-i3 install-shell install-spacemacs \
-  install-git install-moc install-gtk install-python install-asdf
+  install-git install-moc install-gtk install-python install-asdf install-picom
 
 .PHONY: install
 install: all  ## Install all configuration files
@@ -50,3 +50,7 @@ install-python:  ## Install Python configuration
 .PHONY: install-asdf
 install-asdf:  ## Install asdf configuration
 	stow asdf -t $(TARGET)
+
+.PHONY: install-picom
+install-picom:  ## Install picom configuration
+	stow picom -t $(TARGET)
