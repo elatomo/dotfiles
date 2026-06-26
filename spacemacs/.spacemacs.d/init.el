@@ -73,7 +73,8 @@ This function should only modify configuration layer settings."
           sqlind-basic-offset 4)
      docker
      (org :variables
-          org-want-todo-bindings t)
+          org-want-todo-bindings t
+          org-enable-github-support t)
      (shell :variables
             shell-default-shell 'vterm
             shell-default-height 30
