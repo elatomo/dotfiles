@@ -73,7 +73,8 @@ This function should only modify configuration layer settings."
           sqlind-basic-offset 4)
      docker
      (org :variables
-          org-want-todo-bindings t)
+          org-want-todo-bindings t
+          org-enable-github-support t)
      (shell :variables
             shell-default-shell 'vterm
             shell-default-height 30
@@ -670,7 +671,7 @@ before packages are loaded."
   (setq org-clock-out-remove-zero-time-clocks t)
 
   ;; Export backends configuration
-  (setq org-export-backends '(ascii html icalendar latex md odt))
+  (setq org-export-backends '(md gfm ascii html icalendar odt))
 
   ;; Babel languages support
   (org-babel-do-load-languages
