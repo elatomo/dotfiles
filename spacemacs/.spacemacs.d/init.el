@@ -670,7 +670,7 @@ before packages are loaded."
   (setq org-clock-out-remove-zero-time-clocks t)
 
   ;; Export backends configuration
-  (setq org-export-backends '(ascii html icalendar latex md odt))
+  (setq org-export-backends '(ascii html icalendar odt))
 
   ;; Babel languages support
   (org-babel-do-load-languages
