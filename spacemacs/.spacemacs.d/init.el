@@ -92,6 +92,7 @@ This function should only modify configuration layer settings."
      janet
      csv
      php
+     terraform
      )
 
    ;; List of additional packages that will be installed without being wrapped
