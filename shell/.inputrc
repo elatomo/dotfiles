@@ -2,3 +2,5 @@ set bell-style none
 set editing-mode vi
 set show-all-if-ambiguous on
 set completion-ignore-case on
+set colored-stats on
+set colored-completion-prefix on
